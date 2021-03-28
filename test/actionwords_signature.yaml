@@ -1,0 +1,57 @@
+---
+- name: '"p1" is running'
+  uid: abd68778-c2a7-4360-bb23-2b615da01972
+  parameters:
+  - name: p1
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: there is a boxer such as "p1"
+  uid: e7b50b4b-e0ad-416b-8e43-1f5ac31f45d3
+  parameters:
+  - name: p1
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: there are matches such as "p1"
+  uid: 4e06726a-ceea-4419-93f1-cf5468e45c5c
+  parameters:
+  - name: p1
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: there is a standing such as "p1"
+  uid: 71514df2-bbfc-4494-9c2f-ee240faf8aa6
+  parameters:
+  - name: p1
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: '"p1" is called with "p2"'
+  uid: 056d1e5b-56bc-4e1f-951e-127f3216d6f6
+  parameters:
+  - name: p1
+  - name: p2
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: response is as "p1"
+  uid: 299d6507-8816-4d46-915e-b4732513976e
+  parameters:
+  - name: p1
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: there is a token such as "p1"
+  uid: 56127f02-9c2f-41c5-979a-c78c2d4dc185
+  parameters:
+  - name: p1
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: DB has boxer such as "p1"
+  uid: 67b7817a-a73f-49d7-b33f-545a4032a521
+  parameters:
+  - name: p1
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: the latest boxer in DB is such as "p1"
+  uid: cb07796d-6bb6-41cb-8364-a4b4ca2e66ea
+  parameters:
+  - name: p1
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: DB does not have boxer such as "p1"
+  uid: 797ebac9-f42b-4953-9953-666b0b1131db
+  parameters:
+  - name: p1
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: there is a standing with matches such as "p1"
+  uid: ded6189f-c33b-4d94-96f5-8b4fc2053cd3
+  parameters:
+  - name: p1
+  body_hash: d41d8cd98f00b204e9800998ecf8427e

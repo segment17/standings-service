@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: boxer-service-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: boxer-service
+  template:
+    metadata:
+      labels:
+        app: boxer-service
+    spec:
+      containers:
+      - name: boxer-service
+        imagePullPolicy: Never
+        image: segment17/standingsservice
+        ports:
+        - containerPort: 50051
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: boxer-service
+spec:
+  type: ClusterIP
+  selector:
+    app: boxer-service
+  ports:
+    - name: grpc
+      port: 50051
+      targetPort: 50051
