@@ -4,32 +4,65 @@ class MockMatchServiceGateway extends MatchServiceGateway {
   
   constructor() {
     super();
-    this.standingsAndMatchesList = []
+    this.matchesList = [];
+    this.boxersList = [];
   }
 
-  async doCallForGetStandingWithId(id) {
-    console.log("Mock get call to MatchServiceGateway with id: " + id);
-    for (let i = 0; i < this.standingsAndMatchesList.length; i++) {
-      const element = this.standingsAndMatchesList[i];
-      if (element.standing && element.standing.boxer && element.standing.boxer.id == id)
-        return {
-          code: 200,
-          message: "success",
-          standingAndMatches: element
-        }
+  async doCallForGetMatchesOfBoxer(param) {
+    let boxer = null;
+    let matches = [];
+    for(let index in this.boxersList) {
+      const temp = this.boxersList[index];
+      if(temp.id === param) {
+        boxer = temp;
+      }
     }
-    return {
-      code: 404,
-      message: "not_found",
-      standingAndMatches: {
-        standing: { boxer: null, winCount: 0, lossCount: 0, score: 0 },
+    if(!boxer) {
+      return {
+        code: 404,
+        message: "not_found",
+        boxer: { id: 0, fullName: '', birthDate: '0', height: 0, weight: 0 },
         matches: []
       }
     }
+    for(let index in this.matchesList) {
+      const match = this.matchesList[index];
+      if(match.awayBoxer.id === boxer.id || match.homeBoxer.id === boxer.id) {
+        matches.push(match);
+      }
+    }
+    return {
+      code: 200,
+      message: "success",
+      boxer: boxer,
+      matches: matches
+    }
   }
 
-  async setupAddStandingAndMatches(obj) {
-    this.standingsAndMatchesList.push(obj);
+  async doCallForGetAllMatches() {
+    return {
+      code: 200,
+      message: "success",
+      matches: this.matchesList
+    }
+  }
+
+  async SetupAddMatches(obj) {
+    for(let index in obj) {
+      this.matchesList.push(obj[index]);
+    }
+    return;
+  }
+
+  async SetupAddBoxer(obj) {
+    this.boxersList.push(obj);
+    return;
+  }
+
+  async SetupAddBoxers(obj) {
+    for(let index in obj) {
+      this.boxersList.push(obj[index]);
+    }
     return;
   }
 }

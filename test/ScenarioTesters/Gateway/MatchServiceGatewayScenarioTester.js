@@ -6,47 +6,52 @@ const assert = require('assert');
 
 class MatchServiceGatewayScenarioTester extends DefaultScenarioTester {
 
-  async thereIsAStandingAndMatchesSuchAs(dataSource) {
-    const specifiedStandingAndMatches = TestFunctions.extractSpecifiedObjectData(dataSource);
-    await globalObjects.standingsServiceGateway.setupAddStandingAndMatches(specifiedStandingAndMatches);
-    globalObjects.done = true;
-  }
-
   unitFunctionIsInvokedWithData(functionName, dataSource) {
-    const specifiedData = TestFunctions.extractSpecifiedObjectData(dataSource);
-    if (functionName == "getStandingAndMatchesOfBoxer") {
-      globalObjects.standingsServiceGateway.getStandingAndMatchesOfBoxer(specifiedData).then(result => {
-
+    if (functionName == "getMatchesOfBoxer") {
+      const specifiedData = TestFunctions.extractSpecifiedObjectData(dataSource);
+      globalObjects.matchServiceGateway.getMatchesOfBoxer(specifiedData).then(result => {
+        globalObjects.result = result;
+      });
+    } else if (functionName == "getAllMatches") {
+      globalObjects.matchServiceGateway.getAllMatches().then(result => {
         globalObjects.result = result;
       });
     }
   }
 
+  async thereAreMatchesSuchAs(dataSource) {
+    const matches = TestFunctions.extractSpecifiedObjectData(dataSource);
+    await globalObjects.matchServiceGateway.SetupAddMatches(matches);
+    globalObjects.done = true;
+  }
+
+  async thereIsABoxerSuchAs(dataSource) {
+    const specifiedBoxer = TestFunctions.extractSpecifiedObjectData(dataSource);
+    await globalObjects.matchServiceGateway.SetupAddBoxer(specifiedBoxer);
+    globalObjects.done = true;
+  }
+
+  async thereAreBoxersSuchAs(dataSource) {
+    const boxers = TestFunctions.extractSpecifiedObjectData(dataSource);
+    await globalObjects.matchServiceGateway.SetupAddBoxers(boxers);
+    globalObjects.done = true;
+  }
+
   async returnedDataIsAs(dataSource) {
     const expectedData = TestFunctions.extractSpecifiedObjectData(dataSource);
     await TestFunctions.waitUntilResult();
+    const result = globalObjects.result;
+    console.log("MatchService Gateway Expected:");
+    console.log(expectedData);
+    console.log("MatchService Gateway Actual:");
+    console.log(globalObjects.result);
 
-    assert(globalObjects.result.code === undefined);
-    assert(globalObjects.result.message === undefined);
-    let standing = globalObjects.result.standing;
-    assert(standing !== undefined && standing !== null);
-    if(expectedData.standing.boxer === null) {
-      assert(standing.boxer === null);
-    } else {
-      assert.strictEqual(standing.boxer.id, expectedData.standing.boxer.id);
+    assert(result.code === expectedData.code);
+    assert(result.message === expectedData.message);
+    if(expectedData.boxer) {
+      assert(JSON.stringify(result.boxer) === JSON.stringify(expectedData.boxer));
     }
-    assert.strictEqual(standing.winCount, expectedData.standing.winCount);
-    assert.strictEqual(standing.lossCount, expectedData.standing.lossCount);
-    assert.strictEqual(standing.score,  expectedData.standing.score);
-
-    let matches = globalObjects.result.matches;
-    assert(matches != undefined && matches != null);
-    if(matches.length > 2) {
-      for (let index = 0; index < matches.length; index++) {
-        const element = matches[index];
-        assert(element.homeBoxer.id == expectedData.standing.boxer.id || element.awayBoxer.id == expectedData.standing.boxer.id);
-      }
-    }
+    assert(JSON.stringify(result.matches.sort()) === JSON.stringify(expectedData.matches.sort()))
   }
 }
 

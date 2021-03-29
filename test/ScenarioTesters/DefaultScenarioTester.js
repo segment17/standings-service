@@ -23,15 +23,6 @@ class DefaultScenarioTester {
     }
   }
 
-  async thereIsABoxerSuchAs(dataSource) {
-    console.log("controller.mediator.BoxerRepository is getting mock data.");
-    const specifiedBoxer = TestFunctions.extractSpecifiedObjectData(dataSource);
-    // globalObjects.controller.mediator.boxerRepository.setupAddBoxer(specifiedBoxer);
-    await globalObjects.client.SetupAddBoxer({boxer: specifiedBoxer}, function (err, res) {
-      globalObjects.done = true;
-    });
-  }
-
   endpointIsCalledWithRequestBody(endpoint, requestBodySource) {
     const requestBody = TestFunctions.extractSpecifiedObjectData(requestBodySource);
     assert(requestBody != undefined);
@@ -102,32 +93,22 @@ class DefaultScenarioTester {
     }    
   }
 
-  async thereIsAStandingAndMatchesSuchAs(dataSource) {
-    const specifiedStandingAndMatches = TestFunctions.extractSpecifiedObjectData(dataSource);
-    // globalObjects.controller.mediator.standingsServiceGateway.setupAddStandingAndMatches(specifiedStandingAndMatches);
-
-    await globalObjects.client.SetupAddStandingAndMatches({standingAndMatches: specifiedStandingAndMatches}, function (err, res) {
-      globalObjects.done = true;
-    });
+  async thereAreMatchesSuchAs(dataSource) {
+    const matches = TestFunctions.extractSpecifiedObjectData(dataSource);
+    await globalObjects.client.SetupAddMatches(matches);
+    globalObjects.done = true;
   }
 
-  async dbHasBoxerSuchAs(dataSource) {
-    const expected = TestFunctions.extractSpecifiedObjectData(dataSource);
-    globalObjects.result = null;
-    globalObjects.client.GetStandingAndMatchesOfBoxer({id: expected.id}, (err, res) => {
-      globalObjects.result = res;
-    });
-    await TestFunctions.waitUntilResult();
-    assert(globalObjects.result.code == 200);
-    this.assertionsForDBHasBoxerSuchAs(expected, globalObjects.result.boxer);
+  async thereIsABoxerSuchAs(dataSource) {
+    const specifiedBoxer = TestFunctions.extractSpecifiedObjectData(dataSource);
+    await globalObjects.client.SetupAddBoxer(specifiedBoxer);
+    globalObjects.done = true;
   }
 
-  assertionsForDBHasBoxerSuchAs(expected, actual) {
-    assert(actual != null);
-    assert(expected.id == actual.id);
-    assert(expected.birthDate == actual.birthDate);
-    assert(expected.height == actual.height);
-    assert(expected.weight == actual.weight);
+  async thereAreBoxersSuchAs(dataSource) {
+    const boxers = TestFunctions.extractSpecifiedObjectData(dataSource);
+    await globalObjects.client.SetupAddBoxers(boxers);
+    globalObjects.done = true;
   }
 }
 

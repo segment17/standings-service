@@ -56,11 +56,19 @@ message SetupAddBoxerResponse {
   int32 code = 1;
 }
 
-message SetupAddStandingAndMatchesRequest {
-  StandingAndMatches standingAndMatches = 1;
+message SetupAddBoxersRequest {
+  repeated Boxer boxers = 1;
 }
 
-message SetupAddStandingAndMatchesResponse {
+message SetupAddBoxersResponse {
+  int32 code = 1;
+}
+
+message SetupAddMatchesRequest {
+  repeated Match matches = 1;
+}
+
+message SetupAddMatchesResponse {
   int32 code = 1;
 }
 
@@ -73,5 +81,6 @@ service StandingsService {
   // Mock endpoints:
   rpc Mock(Null) returns (Null) {};
   rpc SetupAddBoxer(SetupAddBoxerRequest) returns (SetupAddBoxerResponse) {};
-  rpc SetupAddStandingAndMatches(SetupAddStandingAndMatchesRequest) returns (SetupAddBoxerResponse) {};
+  rpc SetupAddBoxers(SetupAddBoxersRequest) returns (SetupAddBoxersResponse) {};
+  rpc SetupAddMatches(SetupAddMatchesRequest) returns (SetupAddMatchesResponse) {};
 }

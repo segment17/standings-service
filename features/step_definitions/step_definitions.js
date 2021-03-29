@@ -25,11 +25,11 @@ Given('there is a boxer such as {string}', async function (boxerDataSource) {
 });
 
 Given('there are boxers such as {string}', async function (boxersDataSource) {
-  /* globalObjects.done = false;
-  await globalObjects.scenarioTester.thereIsABoxerSuchAs(boxerDataSource);
+  globalObjects.done = false;
+  await globalObjects.scenarioTester.thereAreBoxersSuchAs(boxersDataSource);
   while (!globalObjects.done) {
     await TestFunctions.sleep(100);
-  } */
+  }
 });
 
 When('{string} is called with {string}', function (endpoint, requestBodySource) {
@@ -48,14 +48,6 @@ Given('there are matches such as {string}', function (matchesDataSource) {
   globalObjects.scenarioTester.thereAreMatchesSuchAs(matchesDataSource);
 });
 
-Given('there is a standing such as {string}', function (standingDataSource) {
-  //globalObjects.scenarioTester.thereIsAStandingSuchAs(standingDataSource);
-});
-
-Given('there are standings such as {string}', function (standingsDataSource) {
-  //globalObjects.scenarioTester.thereAreStandingsSuchAs(standingsDataSource);
-});
-
 When('{string} is invoked with {string}', function (unitFunctionName, invocationDataSource) {
   globalObjects.scenarioTester.unitFunctionIsInvokedWithData(unitFunctionName, invocationDataSource);
 });
@@ -66,12 +58,4 @@ When('{string} is invoked', function (unitFunctionName) {
 
 Then('returned data is as {string}', async function (expectedDataSource) {
   await globalObjects.scenarioTester.returnedDataIsAs(expectedDataSource);
-});
-
-Given('there is a standing with matches such as {string}', async function (dataSource) {
-  globalObjects.done = false;
-  await globalObjects.scenarioTester.thereIsAStandingAndMatchesSuchAs(dataSource);
-  while (!globalObjects.done) {
-    await TestFunctions.sleep(100);
-  }
 });

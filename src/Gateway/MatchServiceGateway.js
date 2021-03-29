@@ -1,27 +1,42 @@
 class MatchServiceGateway {
 
-  // Template code
-
   // Gateway exposed function
-  async getStandingAndMatchesOfBoxer(param) {
-    let response = await this.doCallForGetStandingWithId(param);
-    let standing = this.extractStandingAndMatchesFromResponse(response);
-    return standing;
+  async getMatchesOfBoxer(param) {
+    let response = await this.doCallForGetMatchesOfBoxer(param);
+    return response;
   }
 
-  // doCallFor[function name]
-  async doCallForGetStandingWithId(param) {
+  async getAllMatches() {
+    let response = await this.doCallForGetAllMatches();
+    return response;
+  }
+
+  async doCallForGetMatchesOfBoxer(param) {
     console.log("Real get call to AnyService with param: " + param);
     return {}; //TODO
   }
 
-  async setupAddStandingAndMatches(obj) {
+  async doCallForGetAllMatches(param) {
+    console.log("Real get call to AnyService with param: " + param);
+    return {}; //TODO
+  }
+
+  async SetupAddMatches(obj) {
     return null;
   }
 
-  extractStandingAndMatchesFromResponse(response) {
+  async SetupAddBoxer(obj) {
+    return null;
+  }
+
+  async SetupAddBoxers(obj) {
+    console.log(obj);
+    return null;
+  }
+
+  extractMatchesFromResponse(response) {
     //TODO Parse response here...
-    return response.standingAndMatches;
+    return response.matches;
   }
 
 }
