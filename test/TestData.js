@@ -314,7 +314,7 @@ const B1_Scenario1_Variation1 = {
   boxer: testBoxer,
   matches: testMatches,
   request_body: {
-    id: 1,
+    boxerId: 1,
   },
   expected_response: {
     code: 200,
@@ -334,7 +334,7 @@ const B1_Scenario2_Fail1 = {
   boxer: testBoxer,
   matches: testMatches,
   request_body: {
-    id: 2,
+    boxerId: 2,
   },
   expected_response: {
     code: 404,

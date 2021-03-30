@@ -41,11 +41,7 @@ class MatchServiceGatewayScenarioTester extends DefaultScenarioTester {
     const expectedData = TestFunctions.extractSpecifiedObjectData(dataSource);
     await TestFunctions.waitUntilResult();
     const result = globalObjects.result;
-    console.log("MatchService Gateway Expected:");
-    console.log(expectedData);
-    console.log("MatchService Gateway Actual:");
-    console.log(globalObjects.result);
-
+    
     assert(result.code === expectedData.code);
     assert(result.message === expectedData.message);
     if(expectedData.boxer) {

@@ -40,7 +40,7 @@ class DefaultScenarioTester {
   endpointIsCalled(endpoint) {
     assert(endpoint != undefined);
     if (endpoint == "GetAllStandings") {
-      globalObjects.client.GetAllStandings(function (err, res) {
+      globalObjects.client.GetAllStandings(null, function (err, res) {
         globalObjects.result = res;
       });
     } else {
@@ -49,66 +49,59 @@ class DefaultScenarioTester {
     }
   }
 
+  compareBoxers(actual, expected) {
+    assert(actual.id == expected.id);
+    assert(actual.fullName == expected.fullName);
+    assert(actual.birthDate == expected.birthDate);
+    assert(actual.height == expected.height);
+    assert(actual.weight == expected.weight);
+  }
+
+  compareStandings(actual, expected) {
+    for(let index in expected) {
+      this.compareBoxers(actual[index].boxer, expected[index].boxer);
+      assert(actual[index].winCount == expected[index].winCount);
+      assert(actual[index].lossCount == expected[index].lossCount);
+      assert(actual[index].score == expected[index].score);
+    }
+  }
+
   async responseIsAs(expectedResponseSource) {
     const expectedResponse = TestFunctions.extractSpecifiedObjectData(expectedResponseSource);
     await TestFunctions.waitUntilResult();
 
     const response = globalObjects.result;
-    assert(response != null);
     assert(response.code === expectedResponse.code);
-    assert.strictEqual(response.message, expectedResponse.message);
-    if(expectedResponse.boxer && expectedResponse.boxer.id === 0) {
-      assert(response.boxer.id === 0);
-    } else {
-      assert(response.boxer.id === expectedResponse.boxer.id);
-      assert(response.boxer.fullName === expectedResponse.boxer.fullName);
-      // Strict equal fails because JavaScript BigInt is at max 2^53-1 however int64 is bigger than that. So whilst converting to protobuf data, it is converted to string. And String != BigInt
-      assert.equal(response.boxer.birthDate, expectedResponse.boxer.birthDate);
-      assert(response.boxer.height === expectedResponse.boxer.height);
-      assert(response.boxer.weight === expectedResponse.boxer.weight);
-
-      if (expectedResponse.standingAndMatches != undefined) {
-        let standingAndMatches = response.standingAndMatches;
-        assert(standingAndMatches != undefined && standingAndMatches != null);
-  
-        let standing = standingAndMatches.standing;
-        assert(standing != undefined && standing != null);
-        if(standing.boxer) {
-          assert.strictEqual(standing.boxer.id, expectedResponse.boxer.id);
-        }
-        assert(standing.winCount == expectedResponse.standingAndMatches.standing.winCount);
-        assert(standing.lossCount == expectedResponse.standingAndMatches.standing.lossCount);
-        assert(standing.score == expectedResponse.standingAndMatches.standing.score);
-  
-        let matches = standingAndMatches.matches;
-        assert(matches != undefined && matches != null);
-        if(matches.length > 2) {
-          for (let index = 0; index < matches.length; index++) {
-            const element = matches[index];
-            assert(element.homeBoxer.id == expectedResponse.boxer.id
-              || element.awayBoxer.id == expectedResponse.boxer.id);
-          }
-        }
-      }
-    }    
+    assert(response.message === expectedResponse.message);
+    if(expectedResponse.standings) {
+      this.compareStandings(response.standings.sort((a, b) => a.boxer.id - b.boxer.id), expectedResponse.standings.sort((a, b) => a.boxer.id - b.boxer.id));
+    }
+    if(expectedResponse.boxer) {
+      this.compareBoxers(response.boxer, expectedResponse.boxer);
+      assert(JSON.stringify(response.standingAndMatches.matches.sort()) == JSON.stringify(response.standingAndMatches.matches.sort()));
+      assert(JSON.stringify(response.standingAndMatches.standing) == JSON.stringify(response.standingAndMatches.standing));
+    }
   }
 
   async thereAreMatchesSuchAs(dataSource) {
     const matches = TestFunctions.extractSpecifiedObjectData(dataSource);
-    await globalObjects.client.SetupAddMatches(matches);
-    globalObjects.done = true;
+    await globalObjects.client.SetupAddMatches({matches: matches}, function (err, res) {
+      globalObjects.done = true;
+    });
   }
 
   async thereIsABoxerSuchAs(dataSource) {
     const specifiedBoxer = TestFunctions.extractSpecifiedObjectData(dataSource);
-    await globalObjects.client.SetupAddBoxer(specifiedBoxer);
-    globalObjects.done = true;
+    await globalObjects.client.SetupAddBoxer({boxer: specifiedBoxer}, function (err, res) {
+      globalObjects.done = true;
+    });
   }
 
   async thereAreBoxersSuchAs(dataSource) {
     const boxers = TestFunctions.extractSpecifiedObjectData(dataSource);
-    await globalObjects.client.SetupAddBoxers(boxers);
-    globalObjects.done = true;
+    await globalObjects.client.SetupAddBoxers({boxers: boxers}, function (err, res) {
+      globalObjects.done = true;
+    });
   }
 }
 

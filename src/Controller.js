@@ -9,8 +9,7 @@ class Controller {
   // Endpoint guards: guard[endpoint name]
   async guardGetStandingAndMatchesOfBoxer(request) {
     //Do validation here
-
-    let response = await this.mediator.getStandingAndMatchesOfBoxer(request.id);
+    let response = await this.mediator.getStandingAndMatchesOfBoxer(request.boxerId);
     // Do validation here
     return response;
   }

@@ -15,7 +15,7 @@ async function bindGetStandingAndMatchesOfBoxer(call, callback) {
   callback(null, r);
 }
 
-async function bindGetAllStandings(callback) {
+async function bindGetAllStandings(call, callback) {
   let r = await globalObjects.controller.guardGetAllStandings();
   callback(null, r);
 }
@@ -26,17 +26,17 @@ async function bindMock(call, callback) {
 }
 
 async function bindSetupAddBoxer(call, callback) {
-  await globalObjects.controller.mediator.matchServiceGateway.SetupAddBoxer(call.request);
+  await globalObjects.controller.mediator.matchServiceGateway.SetupAddBoxer(call.request.boxer);
   callback(null, {code: 200});
 }
 
 async function bindSetupAddBoxers(call, callback) {
-  await globalObjects.controller.mediator.matchServiceGateway.SetupAddBoxers(call.request);
+  await globalObjects.controller.mediator.matchServiceGateway.SetupAddBoxers(call.request.boxers);
   callback(null, {code: 200});
 }
 
 async function bindSetupAddMatches(call, callback) {
-  await globalObjects.controller.mediator.matchServiceGateway.SetupAddMatches(call.request);
+  await globalObjects.controller.mediator.matchServiceGateway.SetupAddMatches(call.request.matches);
   callback(null, {code: 200});
 }
 
