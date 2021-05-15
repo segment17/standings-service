@@ -4,545 +4,6 @@
     "elements": [
       {
         "description": "",
-        "id": "standings-service-component-features;get-all-standings",
-        "keyword": "Scenario Outline",
-        "line": 7,
-        "name": "Get all standings",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 106000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 8,
-            "name": "there are boxers such as \"H2_Scenario1_Variation1.boxers\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:27"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 110000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 9,
-            "name": "there are matches such as \"H2_Scenario1_Variation1.matches\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:47"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 10,
-            "name": "\"GetAllStandings\" is called",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:39"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 11,
-            "name": "response is as \"H2_Scenario1_Variation1.expected_response\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:43"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 103000000
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@Component",
-            "line": 1
-          },
-          {
-            "name": "@H2",
-            "line": 6
-          },
-          {
-            "name": "@H2_Scenario1",
-            "line": 6
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "standings-service-component-features;get-standing-and-matches-of-a-boxer",
-        "keyword": "Scenario Outline",
-        "line": 18,
-        "name": "Get standing and matches of a boxer",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 105000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 19,
-            "name": "there is a boxer such as \"B1_Scenario1_Variation1.boxer\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 106000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 20,
-            "name": "there are matches such as \"B1_Scenario1_Variation1.matches\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:47"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 21,
-            "name": "\"GetStandingAndMatchesOfBoxer\" is called with \"B1_Scenario1_Variation1.request_body\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:35"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 22,
-            "name": "response is as \"B1_Scenario1_Variation1.expected_response\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:43"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 105000000
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@Component",
-            "line": 1
-          },
-          {
-            "name": "@B1",
-            "line": 17
-          },
-          {
-            "name": "@B1_Scenario1",
-            "line": 17
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "standings-service-component-features;get-standing-and-matches-of-a-boxer-failure",
-        "keyword": "Scenario Outline",
-        "line": 31,
-        "name": "Get standing and matches of a boxer failure",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 105000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 32,
-            "name": "there is a boxer such as \"B1_Scenario2_Fail1.boxer\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 106000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 33,
-            "name": "there are matches such as \"B1_Scenario2_Fail1.matches\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:47"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 34,
-            "name": "\"GetStandingAndMatchesOfBoxer\" is called with \"B1_Scenario2_Fail1.request_body\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:35"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 35,
-            "name": "response is as \"B1_Scenario2_Fail1.expected_response\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:43"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 107000000
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@Component",
-            "line": 1
-          },
-          {
-            "name": "@B1",
-            "line": 30
-          },
-          {
-            "name": "@B1_Scenario2",
-            "line": 30
-          }
-        ],
-        "type": "scenario"
-      }
-    ],
-    "id": "standings-service-component-features",
-    "line": 2,
-    "keyword": "Feature",
-    "name": "Standings Service Component Features",
-    "tags": [
-      {
-        "name": "@Component",
-        "line": 1
-      }
-    ],
-    "uri": "features/features_raw/Component.feature"
-  },
-  {
-    "description": "",
-    "elements": [
-      {
-        "description": "",
-        "id": "standings-service-e2e-features;get-all-standings",
-        "keyword": "Scenario Outline",
-        "line": 7,
-        "name": "Get all standings",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 8,
-            "name": "there are boxers such as \"H2_Scenario1_Variation1.boxers\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:27"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 104000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 9,
-            "name": "there are matches such as \"H2_Scenario1_Variation1.matches\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:47"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 10,
-            "name": "\"GetAllStandings\" is called",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:39"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 11,
-            "name": "response is as \"H2_Scenario1_Variation1.expected_response\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:43"
-            },
-            "result": {
-              "status": "failed",
-              "duration": 126000000,
-              "error_message": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(response.code === expectedResponse.code)\n\n    + expected - actual\n\n    -false\n    +true\n\n    at DefaultScenarioTester.responseIsAs (/Users/deniz/Projects/Thesis/standings-service/test/ScenarioTesters/DefaultScenarioTester.js:71:5)\n    at async World.<anonymous> (/Users/deniz/Projects/Thesis/standings-service/features/step_definitions/step_definitions.js:44:3)"
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@E2E",
-            "line": 1
-          },
-          {
-            "name": "@H2",
-            "line": 6
-          },
-          {
-            "name": "@H2_Scenario1",
-            "line": 6
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "standings-service-e2e-features;get-standing-and-matches-of-a-boxer",
-        "keyword": "Scenario Outline",
-        "line": 18,
-        "name": "Get standing and matches of a boxer",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 19,
-            "name": "there is a boxer such as \"B1_Scenario1_Variation1.boxer\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 108000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 20,
-            "name": "there are matches such as \"B1_Scenario1_Variation1.matches\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:47"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 21,
-            "name": "\"GetStandingAndMatchesOfBoxer\" is called with \"B1_Scenario1_Variation1.request_body\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:35"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 22,
-            "name": "response is as \"B1_Scenario1_Variation1.expected_response\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:43"
-            },
-            "result": {
-              "status": "failed",
-              "duration": 108000000,
-              "error_message": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(response.code === expectedResponse.code)\n\n    + expected - actual\n\n    -false\n    +true\n\n    at DefaultScenarioTester.responseIsAs (/Users/deniz/Projects/Thesis/standings-service/test/ScenarioTesters/DefaultScenarioTester.js:71:5)\n    at async World.<anonymous> (/Users/deniz/Projects/Thesis/standings-service/features/step_definitions/step_definitions.js:44:3)"
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@E2E",
-            "line": 1
-          },
-          {
-            "name": "@B1",
-            "line": 17
-          },
-          {
-            "name": "@B1_Scenario1",
-            "line": 17
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "standings-service-e2e-features;get-standing-and-matches-of-a-boxer-failure",
-        "keyword": "Scenario Outline",
-        "line": 31,
-        "name": "Get standing and matches of a boxer failure",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 32,
-            "name": "there is a boxer such as \"B1_Scenario2_Fail1.boxer\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 107000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 33,
-            "name": "there are matches such as \"B1_Scenario2_Fail1.matches\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:47"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 34,
-            "name": "\"GetStandingAndMatchesOfBoxer\" is called with \"B1_Scenario2_Fail1.request_body\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:35"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 35,
-            "name": "response is as \"B1_Scenario2_Fail1.expected_response\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:43"
-            },
-            "result": {
-              "status": "failed",
-              "duration": 103000000,
-              "error_message": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(response.code === expectedResponse.code)\n\n    + expected - actual\n\n    -false\n    +true\n\n    at DefaultScenarioTester.responseIsAs (/Users/deniz/Projects/Thesis/standings-service/test/ScenarioTesters/DefaultScenarioTester.js:71:5)\n    at async World.<anonymous> (/Users/deniz/Projects/Thesis/standings-service/features/step_definitions/step_definitions.js:44:3)"
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@E2E",
-            "line": 1
-          },
-          {
-            "name": "@B1",
-            "line": 30
-          },
-          {
-            "name": "@B1_Scenario2",
-            "line": 30
-          }
-        ],
-        "type": "scenario"
-      }
-    ],
-    "id": "standings-service-e2e-features",
-    "line": 2,
-    "keyword": "Feature",
-    "name": "Standings Service E2E Features",
-    "tags": [
-      {
-        "name": "@E2E",
-        "line": 1
-      }
-    ],
-    "uri": "features/features_raw/E2E.feature"
-  },
-  {
-    "description": "",
-    "elements": [
-      {
-        "description": "",
         "id": "match-service-gateway-unit-feature;get-all-matches-from-match-service-gateway",
         "keyword": "Scenario Outline",
         "line": 7,
@@ -553,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 102000000
+              "duration": 2000000
             }
           },
           {
@@ -566,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 0
             }
           },
           {
@@ -592,7 +53,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 0
+              "duration": 1000000
             }
           },
           {
@@ -604,14 +65,15 @@
               "location": "features/step_definitions/step_definitions.js:59"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "failed",
+              "duration": 12000000,
+              "error_message": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(result.code === expectedData.code)\n\n    + expected - actual\n\n    -false\n    +true\n\n    at MatchServiceGatewayScenarioTester.returnedDataIsAs (/Users/deniz/Projects/Thesis/standings-service/test/ScenarioTesters/Gateway/MatchServiceGatewayScenarioTester.js:45:5)\n    at async World.<anonymous> (/Users/deniz/Projects/Thesis/standings-service/features/step_definitions/step_definitions.js:60:3)"
             }
           }
         ],
         "tags": [
           {
-            "name": "@Unit",
+            "name": "@Integration",
             "line": 1
           },
           {
@@ -641,7 +103,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 103000000
+              "duration": 1000000
             }
           },
           {
@@ -667,7 +129,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 0
             }
           },
           {
@@ -692,14 +154,15 @@
               "location": "features/step_definitions/step_definitions.js:59"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "failed",
+              "duration": 1000000,
+              "error_message": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(result.code === expectedData.code)\n\n    + expected - actual\n\n    -false\n    +true\n\n    at MatchServiceGatewayScenarioTester.returnedDataIsAs (/Users/deniz/Projects/Thesis/standings-service/test/ScenarioTesters/Gateway/MatchServiceGatewayScenarioTester.js:45:5)\n    at async World.<anonymous> (/Users/deniz/Projects/Thesis/standings-service/features/step_definitions/step_definitions.js:60:3)"
             }
           }
         ],
         "tags": [
           {
-            "name": "@Unit",
+            "name": "@Integration",
             "line": 1
           },
           {
@@ -729,7 +192,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 104000000
+              "duration": 1000000
             }
           },
           {
@@ -742,7 +205,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 0
             }
           },
           {
@@ -780,14 +243,15 @@
               "location": "features/step_definitions/step_definitions.js:59"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "failed",
+              "duration": 1000000,
+              "error_message": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(result.code === expectedData.code)\n\n    + expected - actual\n\n    -false\n    +true\n\n    at MatchServiceGatewayScenarioTester.returnedDataIsAs (/Users/deniz/Projects/Thesis/standings-service/test/ScenarioTesters/Gateway/MatchServiceGatewayScenarioTester.js:45:5)\n    at async World.<anonymous> (/Users/deniz/Projects/Thesis/standings-service/features/step_definitions/step_definitions.js:60:3)"
             }
           }
         ],
         "tags": [
           {
-            "name": "@Unit",
+            "name": "@Integration",
             "line": 1
           },
           {
@@ -812,7 +276,7 @@
     "name": "Match Service Gateway Unit Feature",
     "tags": [
       {
-        "name": "@Unit",
+        "name": "@Integration",
         "line": 1
       },
       {
@@ -824,6 +288,6 @@
         "line": 1
       }
     ],
-    "uri": "features/features_raw/Unit/MatchServiceGateway.feature"
+    "uri": "features/features_raw/Integration/MatchServiceGateway.feature"
   }
 ]

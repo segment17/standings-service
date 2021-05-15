@@ -1,4 +1,4 @@
-@Unit @Gateway @MatchServiceGateway
+@Integration @Gateway @MatchServiceGateway
 Feature: Match Service Gateway Unit Feature
 
   #SUCCESS SCENARIOS
