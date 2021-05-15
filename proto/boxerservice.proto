@@ -1,0 +1,139 @@
+syntax = "proto3";
+
+package boxerservice_package;
+
+message Boxer {
+  int32 id = 1;
+  string fullName = 2;
+  int64 birthDate = 3;
+  int32 height = 4;
+  double weight = 5;
+}
+
+message Match {
+  int32 id = 1;
+  Boxer homeBoxer = 2;
+  Boxer awayBoxer = 3;
+  int64 matchTime = 4;
+  bool isFinished = 5;
+  optional Boxer winnerBoxer = 6;
+}
+
+message Standing {
+  Boxer boxer = 1;
+  int32 winCount = 2;
+  int32 lossCount = 3;
+  double score = 4;
+}
+
+message StandingAndMatches {
+  Standing standing = 1;
+  repeated Match matches = 2;
+}
+
+message GetBoxerRequest {
+  int32 id = 1;
+}
+
+message GetBoxerResponse {
+  int32 code = 1;
+  string message = 2;
+  Boxer boxer = 3;
+}
+
+message GetBoxerWithStandingAndMatchesRequest {
+  int32 id = 1;
+}
+
+message GetBoxerWithStandingAndMatchesResponse {
+  int32 code = 1;
+  string message = 2;
+  Boxer boxer = 3;
+  StandingAndMatches standingAndMatches = 4;
+}
+
+message AddBoxerRequest {
+  string fullName = 1;
+  int64 birthDate = 2;
+  int32 height = 3;
+  double weight = 4;
+  string token = 5;
+}
+
+message AddBoxerResponse {
+  int32 code = 1;
+  string message = 2;
+  Boxer boxer = 3;
+}
+
+message EditBoxerRequest {
+  int32 id = 1;
+  optional string fullName = 2;
+  optional int64 birthDate = 3;
+  optional int32 height = 4;
+  optional double weight = 5;
+  string token = 6;
+}
+
+message EditBoxerResponse {
+  int32 code = 1;
+  string message = 2;
+  Boxer boxer = 3;
+}
+
+message RemoveBoxerRequest {
+  int32 id = 1;
+  string token = 2;
+}
+
+message RemoveBoxerResponse {
+  int32 code = 1;
+  string message = 2;
+  Boxer boxer = 3;
+}
+
+message SetupAddBoxerRequest {
+  Boxer boxer = 1;
+}
+
+message SetupAddBoxerResponse {
+  int32 code = 1;
+}
+
+message SetupClearBoxersResponse {
+  int32 code = 1;
+}
+
+message SetupAddStandingAndMatchesRequest {
+  StandingAndMatches standingAndMatches = 1;
+}
+
+message SetupAddStandingAndMatchesResponse {
+  int32 code = 1;
+}
+
+message SetupAddTokenRequest {
+  string token = 1;
+}
+
+message SetupAddTokenResponse {
+  int32 code = 1;
+}
+
+message Null {};
+
+service BoxerService {
+  rpc GetBoxer(GetBoxerRequest) returns (GetBoxerResponse) {};
+  rpc GetBoxerWithStandingAndMatches(GetBoxerWithStandingAndMatchesRequest) returns (GetBoxerWithStandingAndMatchesResponse) {};
+  rpc AddBoxer(AddBoxerRequest) returns (AddBoxerResponse) {};
+  rpc EditBoxer(EditBoxerRequest) returns (EditBoxerResponse) {};
+  rpc RemoveBoxer(RemoveBoxerRequest) returns (RemoveBoxerResponse) {};
+
+  // Mock endpoints:
+  rpc Mock(Null) returns (Null) {};
+  rpc EnterIntegratedTestingEnvironment(Null) returns (Null) {};
+  rpc SetupAddBoxer(SetupAddBoxerRequest) returns (SetupAddBoxerResponse) {};
+  rpc SetupClearBoxers(Null) returns (SetupClearBoxersResponse) {};
+  rpc SetupAddStandingAndMatches(SetupAddStandingAndMatchesRequest) returns (SetupAddBoxerResponse) {};
+  rpc SetupAddToken(SetupAddTokenRequest) returns (SetupAddTokenResponse) {};
+}
