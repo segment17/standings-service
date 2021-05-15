@@ -26,14 +26,10 @@ class MatchServiceGateway {
   }
 
   async SetupAddBoxer(obj) {
-    console.log("DENEME");
-    console.log(obj);
     return null;
   }
 
   async SetupAddBoxers(obj) {
-    console.log("DENEME");
-    console.log(obj);
     return null;
   }
 

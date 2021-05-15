@@ -45,7 +45,7 @@ class MatchServiceGatewayScenarioTester extends DefaultScenarioTester {
     assert(result.code === expectedData.code);
     assert(result.message === expectedData.message);
     if(expectedData.boxer) {
-      assert(JSON.stringify(result.boxer) === JSON.stringify(expectedData.boxer));
+      assert(JSON.stringify(result.boxerId) === JSON.stringify(expectedData.boxerId));
     }
     assert(JSON.stringify(result.matches.sort()) === JSON.stringify(expectedData.matches.sort()))
   }

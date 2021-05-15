@@ -5,178 +5,43 @@ const testBoxer = {
   height: 178,
   weight: 100,
 };
-const testMatches = [
-  {
-    id: 1,
-    homeBoxer: {
-      id: 1,
-      fullName: "Mike Tyson",
-      birthDate: 127419968, // Timestamp
-      height: 178,
-      weight: 100,
-    },
-    awayBoxer: {
-      id: 4,
-      fullName: "Connor McGregor",
-      birthDate: 127419968, // Timestamp
-      height: 175,
-      weight: 80,
-    },
-    matchTime: 127419968,
-    isFinished: true,
-    winnerBoxer: {
-      id: 4,
-      fullName: "Connor McGregor",
-      birthDate: 127419968, // Timestamp
-      height: 175,
-      weight: 80,
-    },
-  },
-  {
-    id: 1,
-    awayBoxer: {
-      id: 1,
-      fullName: "Mike Tyson",
-      birthDate: 127419968, // Timestamp
-      height: 178,
-      weight: 100,
-    },
-    homeBoxer: {
-      id: 6,
-      fullName: "Logan Paul",
-      birthDate: 127419968, // Timestamp
-      height: 195,
-      weight: 120,
-    },
-    matchTime: 127419968,
-    isFinished: true,
-    winnerBoxer: {
-      id: 1,
-      fullName: "Mike Tyson",
-      birthDate: 127419968, // Timestamp
-      height: 178,
-      weight: 100,
-    },
-  },
-  {
-    id: 1,
-    awayBoxer: {
-      id: 1,
-      fullName: "Mike Tyson",
-      birthDate: 127419968, // Timestamp
-      height: 178,
-      weight: 100,
-    },
-    homeBoxer: {
-      id: 8,
-      fullName: 'Dwayne "The Rock" Johnson',
-      birthDate: 127419968, // Timestamp
-      height: 196,
-      weight: 118,
-    },
-    matchTime: 129419968,
-    isFinished: false,
-  },
-  {
-    id: 1,
-    awayBoxer: {
-      id: 4,
-      fullName: "Connor McGregor",
-      birthDate: 127419968, // Timestamp
-      height: 175,
-      weight: 80,
-    },
-    homeBoxer: {
-      id: 8,
-      fullName: 'Dwayne "The Rock" Johnson',
-      birthDate: 127419968, // Timestamp
-      height: 196,
-      weight: 118,
-    },
-    matchTime: 129419968,
-    isFinished: true,
-    winnerBoxer: {
-      id: 8,
-      fullName: 'Dwayne "The Rock" Johnson',
-      birthDate: 127419968, // Timestamp
-      height: 196,
-      weight: 118,
-    }
-  }
-];
 const testMatchesWithTestBoxer = [
   {
     id: 1,
-    homeBoxer: {
-      id: 1,
-      fullName: "Mike Tyson",
-      birthDate: 127419968, // Timestamp
-      height: 178,
-      weight: 100,
-    },
-    awayBoxer: {
-      id: 4,
-      fullName: "Connor McGregor",
-      birthDate: 127419968, // Timestamp
-      height: 175,
-      weight: 80,
-    },
+    homeBoxerId: 1,
+    awayBoxerId: 4,
     matchTime: 127419968,
     isFinished: true,
-    winnerBoxer: {
-      id: 4,
-      fullName: "Connor McGregor",
-      birthDate: 127419968, // Timestamp
-      height: 175,
-      weight: 80,
-    },
+    winnerBoxerId: 4,
   },
   {
     id: 1,
-    awayBoxer: {
-      id: 1,
-      fullName: "Mike Tyson",
-      birthDate: 127419968, // Timestamp
-      height: 178,
-      weight: 100,
-    },
-    homeBoxer: {
-      id: 6,
-      fullName: "Logan Paul",
-      birthDate: 127419968, // Timestamp
-      height: 195,
-      weight: 120,
-    },
+    awayBoxerId: 1,
+    homeBoxerId: 6,
     matchTime: 127419968,
     isFinished: true,
-    winnerBoxer: {
-      id: 1,
-      fullName: "Mike Tyson",
-      birthDate: 127419968, // Timestamp
-      height: 178,
-      weight: 100,
-    },
+    winnerBoxerId: 1,
   },
   {
     id: 1,
-    awayBoxer: {
-      id: 1,
-      fullName: "Mike Tyson",
-      birthDate: 127419968, // Timestamp
-      height: 178,
-      weight: 100,
-    },
-    homeBoxer: {
-      id: 8,
-      fullName: 'Dwayne "The Rock" Johnson',
-      birthDate: 127419968, // Timestamp
-      height: 196,
-      weight: 118,
-    },
+    awayBoxerId: 1,
+    homeBoxerId: 8,
     matchTime: 129419968,
     isFinished: false,
   },
 ];
+const testMatches = [
+  ...testMatchesWithTestBoxer,
+  {
+    id: 1,
+    awayBoxerId: 4,
+    homeBoxerId: 8,
+    matchTime: 129419968,
+    isFinished: true,
+    winnerBoxerId: 8
+  }
+];
+
 const testBoxers = [
   {
     id: 1,
@@ -208,7 +73,7 @@ const testBoxers = [
   }
 ];
 const testStandingOfTestBoxer = {
-  boxer: testBoxer,
+  boxerId: 1,
   winCount: 1,
   lossCount: 1,
   score: 0.5
@@ -216,37 +81,19 @@ const testStandingOfTestBoxer = {
 const testStandings = [
   testStandingOfTestBoxer,
   {
-    boxer: {
-      id: 4,
-      fullName: "Connor McGregor",
-      birthDate: 127419968,
-      height: 175,
-      weight: 80,
-    },
+    boxerId: 4,
     winCount: 1,
     lossCount: 1,
     score: 0.5
   },
   {
-    boxer: {
-      id: 6,
-      fullName: "Logan Paul",
-      birthDate: 127419968,
-      height: 195,
-      weight: 120,
-    },
+    boxerId: 6,
     winCount: 0,
     lossCount: 1,
     score: 0
   },
   {
-    boxer: {
-      id: 8,
-      fullName: 'Dwayne "The Rock" Johnson',
-      birthDate: 127419968,
-      height: 196,
-      weight: 118,
-    },
+    boxerId: 8,
     winCount: 1,
     lossCount: 0,
     score: 1
@@ -291,7 +138,7 @@ var Unit_MatchServiceGateway_Scenario3_Fail1 = {
   expected_data: {
     code: 404,
     message: "not_found",
-    boxer: emptyBoxer,
+    boxer: 0,
     matches: [],
   },
 };
@@ -319,7 +166,6 @@ const B1_Scenario1_Variation1 = {
   expected_response: {
     code: 200,
     message: "success",
-    boxer: testBoxer,
     standingAndMatches: {
       standing: testStandingOfTestBoxer,
       matches: testMatchesWithTestBoxer
@@ -339,7 +185,7 @@ const B1_Scenario2_Fail1 = {
   expected_response: {
     code: 404,
     message: "not_found",
-    boxer: emptyBoxer,
+    boxer: 0,
     standingAndMatches: {
       standing: emptyStanding,
       matches: []

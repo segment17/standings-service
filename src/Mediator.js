@@ -9,38 +9,38 @@ class Mediator {
 
   // Endpoints
 
-  calculateStandingOfBoxer(matches, boxer) {
+  calculateStandingOfBoxer(matches, boxerId) {
     let wins = 0;
     let losses = 0;
     for(let index in matches) {
       const match = matches[index];
       if(match.isFinished) {
-        if(match.winnerBoxer.id === boxer.id) {
+        if(match.winnerBoxerId === boxerId) {
           wins++;
         } else {
-          if(match.homeBoxer.id === boxer.id || match.awayBoxer.id === boxer.id) {
+          if(match.homeBoxerId === boxerId || match.awayBoxerId === boxerId) {
             losses++;
           }
         }
       }
     }
     let score = wins / (wins + losses);
-    return { boxer: boxer.id === 0 ? null : boxer, winCount: wins, lossCount: losses, score: score ? score : 0 };
+    return { boxerId: boxerId, winCount: wins, lossCount: losses, score: score ? score : 0 };
   }
 
   extractBoxersFromMatches(matches) {
     let boxers = [];
     let boxer_ids = [];
     for(let index in matches) {
-      const away = matches[index].awayBoxer;
-      const home = matches[index].homeBoxer;
-      if(!boxer_ids.includes(away.id)) {
-        boxer_ids.push(away.id);
-        boxers.push(away);
+      const awayId = matches[index].awayBoxerId;
+      const homeId = matches[index].homeBoxerId;
+      if(!boxer_ids.includes(awayId)) {
+        boxer_ids.push(awayId);
+        boxers.push(awayId);
       }
-      if(!boxer_ids.includes(home.id)) {
-        boxer_ids.push(home.id);
-        boxers.push(home);
+      if(!boxer_ids.includes(homeId)) {
+        boxer_ids.push(homeId);
+        boxers.push(homeId);
       }
     }
     return boxers;
@@ -53,7 +53,6 @@ class Mediator {
     return {
       code: response.code,
       message: response.message,
-      boxer: response.boxer,
       standingAndMatches: {
         standing: standing,
         matches: response.matches

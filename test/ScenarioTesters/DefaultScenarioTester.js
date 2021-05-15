@@ -10,6 +10,7 @@ class DefaultScenarioTester {
 
   // Special Before Scenario Function
   before() {
+    globalObjects.reset();
     globalObjects.resetResult();
     globalObjects.setScenario(this.scenario);
     if (!TestFunctions.isScenarioE2E(this.scenario) && !TestFunctions.isScenarioIntegration(this.scenario)) {
@@ -50,17 +51,13 @@ class DefaultScenarioTester {
   }
 
   compareBoxers(actual, expected) {
-    assert(actual.id == expected.id);
-    assert(actual.fullName == expected.fullName);
-    assert(actual.birthDate == expected.birthDate);
-    assert(actual.height == expected.height);
-    assert(actual.weight == expected.weight);
+    assert.strictEqual(actual, expected);
   }
 
   compareStandings(actual, expected) {
     for(let index in expected) {
       this.compareBoxers(actual[index].boxer, expected[index].boxer);
-      assert(actual[index].winCount == expected[index].winCount);
+      assert.strictEqual(actual[index].winCount, expected[index].winCount);
       assert(actual[index].lossCount == expected[index].lossCount);
       assert(actual[index].score == expected[index].score);
     }
@@ -74,7 +71,7 @@ class DefaultScenarioTester {
     assert(response.code === expectedResponse.code);
     assert(response.message === expectedResponse.message);
     if(expectedResponse.standings) {
-      this.compareStandings(response.standings.sort((a, b) => a.boxer.id - b.boxer.id), expectedResponse.standings.sort((a, b) => a.boxer.id - b.boxer.id));
+      this.compareStandings(response.standings.sort((a, b) => a.boxerId - b.boxerId), expectedResponse.standings.sort((a, b) => a.boxerId - b.boxerId));
     }
     if(expectedResponse.boxer) {
       this.compareBoxers(response.boxer, expectedResponse.boxer);

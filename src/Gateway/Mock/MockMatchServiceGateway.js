@@ -18,6 +18,7 @@ class MockMatchServiceGateway extends MatchServiceGateway {
       }
     }
     if(!boxer) {
+      
       return {
         code: 404,
         message: "not_found",
@@ -27,7 +28,7 @@ class MockMatchServiceGateway extends MatchServiceGateway {
     }
     for(let index in this.matchesList) {
       const match = this.matchesList[index];
-      if(match.awayBoxer.id === boxer.id || match.homeBoxer.id === boxer.id) {
+      if(match.awayBoxerId === boxer.id || match.homeBoxerId === boxer.id) {
         matches.push(match);
       }
     }

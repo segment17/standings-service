@@ -1,5 +1,5 @@
-@E2E
-Feature: Standings Service E2E Features
+@Component
+Feature: Standings Service Component Features
 
   #SUCCESS SCENARIOS
 
