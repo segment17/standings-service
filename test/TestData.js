@@ -15,7 +15,7 @@ const testMatchesWithTestBoxer = [
     winnerBoxerId: 4,
   },
   {
-    id: 1,
+    id: 2,
     awayBoxerId: 1,
     homeBoxerId: 6,
     matchTime: 127419968,
@@ -23,7 +23,7 @@ const testMatchesWithTestBoxer = [
     winnerBoxerId: 1,
   },
   {
-    id: 1,
+    id: 3,
     awayBoxerId: 1,
     homeBoxerId: 8,
     matchTime: 129419968,
@@ -33,7 +33,7 @@ const testMatchesWithTestBoxer = [
 const testMatches = [
   ...testMatchesWithTestBoxer,
   {
-    id: 1,
+    id: 4 ,
     awayBoxerId: 4,
     homeBoxerId: 8,
     matchTime: 129419968,

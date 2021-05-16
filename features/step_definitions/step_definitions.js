@@ -1,15 +1,20 @@
-const { Given, When, Then, Before } = require('@cucumber/cucumber');
+const { Given, When, Then, Before, After } = require('@cucumber/cucumber');
 const TestFunctions = require('../../test/TestFunctions');
 const ScenarioTesterFactory = require('../../test/ScenarioTesters/ScenarioTesterFactory');
 const globalObjects = require('../../index');
 
 Before(async function (scenario) {
+  await globalObjects.cleanUp();
   globalObjects.done = false;
   globalObjects.setScenarioTester(ScenarioTesterFactory.createScenarioTester(scenario));
   globalObjects.scenarioTester.before();
   while (!globalObjects.done) {
     await TestFunctions.sleep(100);
   }
+});
+
+After(async function (scenario) {
+  // await globalObjects.cleanUp();
 });
 
 Given('{string} is running', function (serviceName) {

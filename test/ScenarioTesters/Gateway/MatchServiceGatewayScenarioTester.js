@@ -45,9 +45,19 @@ class MatchServiceGatewayScenarioTester extends DefaultScenarioTester {
     assert(result.code === expectedData.code);
     assert(result.message === expectedData.message);
     if(expectedData.boxer) {
-      assert(JSON.stringify(result.boxerId) === JSON.stringify(expectedData.boxerId));
+      this.compareBoxers(result.boxer, expectedData.boxer);
     }
-    assert(JSON.stringify(result.matches.sort()) === JSON.stringify(expectedData.matches.sort()))
+    this.compareMatches(result.matches, expectedData.matches);
+
+  }
+
+
+
+  async thereAreMatchesSuchAs(dataSource) {
+    const matches = TestFunctions.extractSpecifiedObjectData(dataSource);
+    await globalObjects.client.SetupAddMatches({matches: matches}, function (err, res) {
+      globalObjects.done = true;
+    });
   }
 }
 

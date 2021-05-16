@@ -48,7 +48,7 @@ class Mediator {
 
   async getStandingAndMatchesOfBoxer(id) {
     const response = await this.matchServiceGateway.getMatchesOfBoxer(id);
-    const standing = this.calculateStandingOfBoxer(response.matches, response.boxer);
+    const standing = this.calculateStandingOfBoxer(response.matches, response.boxer ? response.boxer.id : 0);
 
     return {
       code: response.code,
@@ -69,6 +69,7 @@ class Mediator {
       standings.push(this.calculateStandingOfBoxer(matches, boxers[index]));
     }
 
+    standings.sort(function(a, b) {return (a.boxerId > b.boxerId) ? 1 : -1});
     return {
       code: response.code,
       message: response.message,

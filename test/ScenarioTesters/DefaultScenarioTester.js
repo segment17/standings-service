@@ -25,6 +25,7 @@ class DefaultScenarioTester {
   }
 
   endpointIsCalledWithRequestBody(endpoint, requestBodySource) {
+    this.endpoint = endpoint;
     const requestBody = TestFunctions.extractSpecifiedObjectData(requestBodySource);
     assert(requestBody != undefined);
     assert(endpoint != undefined);
@@ -39,6 +40,7 @@ class DefaultScenarioTester {
   }
 
   endpointIsCalled(endpoint) {
+    this.endpoint = endpoint;
     assert(endpoint != undefined);
     if (endpoint == "GetAllStandings") {
       globalObjects.client.GetAllStandings(null, function (err, res) {
@@ -51,15 +53,25 @@ class DefaultScenarioTester {
   }
 
   compareBoxers(actual, expected) {
-    assert.strictEqual(actual, expected);
+    assert.strictEqual(actual.id, expected.id);
+    assert.strictEqual(actual.fullName, expected.fullName);
+    assert.strictEqual(actual.height, expected.height);
+    assert.strictEqual(actual.weight, expected.weight);
+    assert(actual.birthDate == expected.birthDate);
+  }
+
+  compareStanding(actual, expected) {
+    if (expected.boxerId != undefined && expected.boxerId != null) {
+      assert.strictEqual(actual.boxerId, expected.boxerId);
+      assert.strictEqual(actual.winCount, expected.winCount);
+      assert(actual.lossCount == expected.lossCount);
+      assert(actual.score == expected.score);
+    }
   }
 
   compareStandings(actual, expected) {
     for(let index in expected) {
-      this.compareBoxers(actual[index].boxer, expected[index].boxer);
-      assert.strictEqual(actual[index].winCount, expected[index].winCount);
-      assert(actual[index].lossCount == expected[index].lossCount);
-      assert(actual[index].score == expected[index].score);
+      this.compareStanding(actual[index], expected[index]);
     }
   }
 
@@ -68,15 +80,35 @@ class DefaultScenarioTester {
     await TestFunctions.waitUntilResult();
 
     const response = globalObjects.result;
-    assert(response.code === expectedResponse.code);
+    assert.strictEqual(response.code, expectedResponse.code);
     assert(response.message === expectedResponse.message);
     if(expectedResponse.standings) {
       this.compareStandings(response.standings.sort((a, b) => a.boxerId - b.boxerId), expectedResponse.standings.sort((a, b) => a.boxerId - b.boxerId));
     }
-    if(expectedResponse.boxer) {
-      this.compareBoxers(response.boxer, expectedResponse.boxer);
-      assert(JSON.stringify(response.standingAndMatches.matches.sort()) == JSON.stringify(response.standingAndMatches.matches.sort()));
-      assert(JSON.stringify(response.standingAndMatches.standing) == JSON.stringify(response.standingAndMatches.standing));
+
+
+    if (this.endpoint == "GetStandingAndMatchesOfBoxer") {
+      this.compareMatches(response.standingAndMatches.matches, expectedResponse.standingAndMatches.matches);
+      this.compareStanding(response.standingAndMatches.standing, expectedResponse.standingAndMatches.standing);
+    }
+    
+  }
+
+  compareMatches(response, expected) {
+    for (let i = 0; i < response.length; i++) {
+      const rMatch = response[i];
+      const eMatch = expected[i];
+      this.compareTwoMatches(rMatch, eMatch);
+    }
+  }
+
+  compareTwoMatches(responseMatch, expectedMatch) {
+    assert.strictEqual(responseMatch.id, expectedMatch.id);
+    assert.strictEqual(responseMatch.homeBoxerId, expectedMatch.homeBoxerId);
+    assert.strictEqual(responseMatch.awayBoxerId, expectedMatch.awayBoxerId);
+    assert(responseMatch.matchTime = expectedMatch.matchTime);
+    if (expectedMatch.winnerBoxerId) {
+      assert.strictEqual(responseMatch.winnerBoxerId, expectedMatch.winnerBoxerId);
     }
   }
 
