@@ -43,8 +43,8 @@ async function bindSetupAddMatches(call, callback) {
 }
 
 async function bindSetupCleanUp(call, callback) {
-  let r = await globalObjects.cleanUp();
-  callback(null, r);
+  await globalObjects.cleanUp();
+  callback(null, {code: 200});
 }
 
 function main() {
