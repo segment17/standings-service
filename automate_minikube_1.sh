@@ -2,10 +2,10 @@
 start=$(date +%s)
 rm -rf features/cucumberstudio
 hiptest-publisher --config-file test/hiptest-publisher.conf --test-run-id 521216 --only=features
-kubectl delete deployments --all
-kubectl delete svc --all
+kubectl delete deployments -l app=standings-service
+kubectl delete svc -l app=standings-service
 eval $(minikube docker-env)
-docker build -t segment17/standingsservice .
+docker build -t segment17hub/standingsservice .
 kubectl apply -f manifest.yaml
 latest_pod=$(kubectl get pods --sort-by=.metadata.creationTimestamp -o jsonpath="{.items[-1].metadata.name}")
 while [[ $(kubectl get pods $latest_pod -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True" ]]; do echo "Waiting for pod..." && sleep 1; done
