@@ -15,6 +15,8 @@ async function bindGetStandingAndMatchesOfBoxer(call, callback) {
   callback(null, r);
 }
 
+
+
 async function bindGetAllStandings(call, callback) {
   let r = await globalObjects.controller.guardGetAllStandings();
   callback(null, r);
@@ -40,6 +42,11 @@ async function bindSetupAddMatches(call, callback) {
   callback(null, {code: 200});
 }
 
+async function bindSetupCleanUp(call, callback) {
+  let r = await globalObjects.cleanUp();
+  callback(null, r);
+}
+
 function main() {
   console.log("Server running...");
   server = new grpc.Server();
@@ -49,7 +56,8 @@ function main() {
     Mock: bindMock,
     SetupAddBoxer: bindSetupAddBoxer,
     SetupAddBoxers: bindSetupAddBoxers,
-    SetupAddMatches: bindSetupAddMatches
+    SetupAddMatches: bindSetupAddMatches,
+    SetupCleanUp: bindSetupCleanUp
   });
 
   if (process.env.STANDINGS_SERVICE_SERVICE_PORT != undefined) {

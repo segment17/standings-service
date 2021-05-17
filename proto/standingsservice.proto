@@ -71,6 +71,10 @@ message SetupAddMatchesResponse {
   int32 code = 1;
 }
 
+message SetupCleanUpResponse {
+  int32 code = 1;
+}
+
 message Null {};
 
 service StandingsService {
@@ -82,4 +86,5 @@ service StandingsService {
   rpc SetupAddBoxer(SetupAddBoxerRequest) returns (SetupAddBoxerResponse) {};
   rpc SetupAddBoxers(SetupAddBoxersRequest) returns (SetupAddBoxersResponse) {};
   rpc SetupAddMatches(SetupAddMatchesRequest) returns (SetupAddMatchesResponse) {};
+  rpc SetupCleanUp(Null) returns (SetupCleanUpResponse) {};
 }
