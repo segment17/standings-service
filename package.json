@@ -6,12 +6,14 @@
   "author": "Segment 17",
   "license": "MIT",
   "scripts": {
-    "test": "cucumber-js --format json:./test/results.json"
+    "test": "cucumber-js --format json:./test/results.json",
+    "coverage": "nyc yarn test"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^7.0.0",
     "@grpc/proto-loader": "^0.5.5",
     "google-protobuf": "^3.13.0",
-    "grpc": "^1.24.3"
+    "grpc": "^1.24.3",
+    "nyc": "^15.1.0"
   }
 }
