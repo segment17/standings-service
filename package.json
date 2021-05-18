@@ -6,8 +6,9 @@
   "author": "Segment 17",
   "license": "MIT",
   "scripts": {
-    "test": "cucumber-js --format json:./test/results.json",
-    "coverage": "nyc yarn test"
+    "test": "cucumber-js --format json:./test/results.json --exit",
+    "coverage": "nyc yarn test",
+    "coverage-report": "yarn coverage && yarn nyc report --reporter=html"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^7.0.0",
