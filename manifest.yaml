@@ -16,7 +16,6 @@ spec:
     spec:
       containers:
       - name: standings-service
-        imagePullPolicy: Never
         image: segment17hub/standingsservice
         ports:
         - containerPort: 50051
