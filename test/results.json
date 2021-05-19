@@ -4,6 +4,321 @@
     "elements": [
       {
         "description": "",
+        "id": "match-service-gateway-unit-feature;get-all-matches-from-match-service-gateway-(1)-(uid:d91426a7-ffae-4340-b3f6-27a06cbf2315)",
+        "keyword": "Scenario Outline",
+        "line": 6,
+        "name": "Get all matches from Match Service Gateway (1) (uid:d91426a7-ffae-4340-b3f6-27a06cbf2315)",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 5000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "there are boxers such as \"Unit_MatchServiceGateway_Scenario1.boxers\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 999000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "there are matches such as \"Unit_MatchServiceGateway_Scenario1.matches\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "\"getAllMatches\" is invoked",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:60"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "returned data is as \"Unit_MatchServiceGateway_Scenario1.expected_data\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:64"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 5002000000,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.time_1.default.setTimeout [as _onTimeout] (/home/arman/Desktop/standings/node_modules/@cucumber/cucumber/lib/user_code_runner.js:63:28)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Integration",
+            "line": 1
+          },
+          {
+            "name": "@Gateway",
+            "line": 1
+          },
+          {
+            "name": "@MatchServiceGateway",
+            "line": 1
+          },
+          {
+            "name": "@Unit_MatchServiceGateway_Scenario1",
+            "line": 5
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "match-service-gateway-unit-feature;get-matches-of-boxer-from-match-service-gateway-(1)-(uid:79b1f0f6-6dfd-44af-b0e0-6eeab2b4d076)",
+        "keyword": "Scenario Outline",
+        "line": 17,
+        "name": "Get matches of boxer from Match Service Gateway (1) (uid:79b1f0f6-6dfd-44af-b0e0-6eeab2b4d076)",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "there are boxers such as \"Unit_MatchServiceGateway_Scenario2.boxers\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3839000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "there are matches such as \"Unit_MatchServiceGateway_Scenario2.matches\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "\"getMatchesOfBoxer\" is invoked with \"Unit_MatchServiceGateway_Scenario2.boxer_id\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:56"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "returned data is as \"Unit_MatchServiceGateway_Scenario2.expected_data\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:64"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 5005000000,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.time_1.default.setTimeout [as _onTimeout] (/home/arman/Desktop/standings/node_modules/@cucumber/cucumber/lib/user_code_runner.js:63:28)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Integration",
+            "line": 1
+          },
+          {
+            "name": "@Gateway",
+            "line": 1
+          },
+          {
+            "name": "@MatchServiceGateway",
+            "line": 1
+          },
+          {
+            "name": "@Unit_MatchServiceGateway_Scenario2",
+            "line": 16
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "match-service-gateway-unit-feature;get-matches-of-boxer-from-match-service-gateway-failure-(1)-(uid:073535fd-d3ee-43b7-b9fe-c976a21dd18b)",
+        "keyword": "Scenario Outline",
+        "line": 28,
+        "name": "Get matches of boxer from Match Service Gateway failure (1) (uid:073535fd-d3ee-43b7-b9fe-c976a21dd18b)",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 29,
+            "name": "there are boxers such as \"Unit_MatchServiceGateway_Scenario3_Fail1.boxers\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 824000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "there are matches such as \"Unit_MatchServiceGateway_Scenario3_Fail1.matches\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 31,
+            "name": "\"getMatchesOfBoxer\" is invoked with \"Unit_MatchServiceGateway_Scenario3_Fail1.boxer_id\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:56"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "returned data is as \"Unit_MatchServiceGateway_Scenario3_Fail1.expected_data\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:64"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 5007000000,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.time_1.default.setTimeout [as _onTimeout] (/home/arman/Desktop/standings/node_modules/@cucumber/cucumber/lib/user_code_runner.js:63:28)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Integration",
+            "line": 1
+          },
+          {
+            "name": "@Gateway",
+            "line": 1
+          },
+          {
+            "name": "@MatchServiceGateway",
+            "line": 1
+          },
+          {
+            "name": "@Unit_MatchServiceGateway_Scenario3",
+            "line": 27
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "match-service-gateway-unit-feature",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Match Service Gateway Unit Feature",
+    "tags": [
+      {
+        "name": "@Integration",
+        "line": 1
+      },
+      {
+        "name": "@Gateway",
+        "line": 1
+      },
+      {
+        "name": "@MatchServiceGateway",
+        "line": 1
+      }
+    ],
+    "uri": "features/cucumberstudio/Integration/Match_Service_Gateway_Unit_Feature.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
         "id": "standings-service-component-features;get-all-standings-(uid:746d4081-ba02-4b08-ac9b-eb2a4aa23b33)",
         "keyword": "Scenario Outline",
         "line": 6,
@@ -14,39 +329,39 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 149000000
+              "duration": 102000000
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 8,
+            "line": 7,
             "name": "there are boxers such as \"H2_Scenario1_Variation1.boxers\"",
             "match": {
               "location": "features/step_definitions/step_definitions.js:32"
             },
             "result": {
               "status": "passed",
-              "duration": 108000000
+              "duration": 109000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 9,
+            "line": 8,
             "name": "there are matches such as \"H2_Scenario1_Variation1.matches\"",
             "match": {
               "location": "features/step_definitions/step_definitions.js:52"
             },
             "result": {
               "status": "passed",
-              "duration": 4000000
+              "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 10,
+            "line": 9,
             "name": "\"GetAllStandings\" is called",
             "match": {
               "location": "features/step_definitions/step_definitions.js:44"
@@ -59,598 +374,14 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 11,
-            "name": "response is as \"H2_Scenario1_Variation1.expected_response\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:48"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 107000000
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@Component",
-            "line": 1
-          },
-          {
-            "name": "@H2",
-            "line": 6
-          },
-          {
-            "name": "@H2_Scenario1",
-            "line": 6
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "standings-service-component-features;get-standing-and-matches-of-a-boxer",
-        "keyword": "Scenario Outline",
-        "line": 18,
-        "name": "Get standing and matches of a boxer",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 147000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 19,
-            "name": "there is a boxer such as \"B1_Scenario1_Variation1.boxer\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:24"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 105000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 20,
-            "name": "there are matches such as \"B1_Scenario1_Variation1.matches\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:52"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 21,
-            "name": "\"GetStandingAndMatchesOfBoxer\" is called with \"B1_Scenario1_Variation1.request_body\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:40"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 22,
-            "name": "response is as \"B1_Scenario1_Variation1.expected_response\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:48"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 103000000
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@Component",
-            "line": 1
-          },
-          {
-            "name": "@B1",
-            "line": 17
-          },
-          {
-            "name": "@B1_Scenario1",
-            "line": 17
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "standings-service-component-features;get-standing-and-matches-of-a-boxer-failure",
-        "keyword": "Scenario Outline",
-        "line": 31,
-        "name": "Get standing and matches of a boxer failure",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 145000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 32,
-            "name": "there is a boxer such as \"B1_Scenario2_Fail1.boxer\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:24"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 107000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 33,
-            "name": "there are matches such as \"B1_Scenario2_Fail1.matches\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:52"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 34,
-            "name": "\"GetStandingAndMatchesOfBoxer\" is called with \"B1_Scenario2_Fail1.request_body\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:40"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 35,
-            "name": "response is as \"B1_Scenario2_Fail1.expected_response\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:48"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 102000000
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@Component",
-            "line": 1
-          },
-          {
-            "name": "@B1",
-            "line": 30
-          },
-          {
-            "name": "@B1_Scenario2",
-            "line": 30
-          }
-        ],
-        "type": "scenario"
-      }
-    ],
-    "id": "standings-service-component-features",
-    "line": 2,
-    "keyword": "Feature",
-    "name": "Standings Service Component Features",
-    "tags": [
-      {
-        "name": "@Component",
-        "line": 1
-      }
-    ],
-    "uri": "features/cucumberstudio/Component.feature"
-  },
-  {
-    "description": "",
-    "elements": [
-      {
-        "description": "",
-        "id": "standings-service-e2e-features;get-all-standings",
-        "keyword": "Scenario Outline",
-        "line": 7,
-        "name": "Get all standings",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 38000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 8,
-            "name": "there are boxers such as \"H2_Scenario1_Variation1.boxers\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:32"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 103000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 9,
-            "name": "there are matches such as \"H2_Scenario1_Variation1.matches\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:52"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 10,
-            "name": "\"GetAllStandings\" is called",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:44"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 11,
-            "name": "response is as \"H2_Scenario1_Variation1.expected_response\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:48"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 101000000
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@E2E",
-            "line": 1
-          },
-          {
-            "name": "@H2",
-            "line": 6
-          },
-          {
-            "name": "@H2_Scenario1",
-            "line": 6
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "standings-service-e2e-features;get-standing-and-matches-of-a-boxer",
-        "keyword": "Scenario Outline",
-        "line": 18,
-        "name": "Get standing and matches of a boxer",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 39000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 19,
-            "name": "there is a boxer such as \"B1_Scenario1_Variation1.boxer\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:24"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 106000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 20,
-            "name": "there are matches such as \"B1_Scenario1_Variation1.matches\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:52"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 21,
-            "name": "\"GetStandingAndMatchesOfBoxer\" is called with \"B1_Scenario1_Variation1.request_body\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:40"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 22,
-            "name": "response is as \"B1_Scenario1_Variation1.expected_response\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:48"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 105000000
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@E2E",
-            "line": 1
-          },
-          {
-            "name": "@B1",
-            "line": 17
-          },
-          {
-            "name": "@B1_Scenario1",
-            "line": 17
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "standings-service-e2e-features;get-standing-and-matches-of-a-boxer-failure",
-        "keyword": "Scenario Outline",
-        "line": 31,
-        "name": "Get standing and matches of a boxer failure",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 32000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 32,
-            "name": "there is a boxer such as \"B1_Scenario2_Fail1.boxer\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 102000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 33,
-            "name": "there are matches such as \"B1_Scenario2_Fail1.matches\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:52"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 34,
-            "name": "\"GetStandingAndMatchesOfBoxer\" is called with \"B1_Scenario2_Fail1.request_body\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:40"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 35,
-            "name": "response is as \"B1_Scenario2_Fail1.expected_response\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:48"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 106000000
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@E2E",
-            "line": 1
-          },
-          {
-            "name": "@B1",
-            "line": 30
-          },
-          {
-            "name": "@B1_Scenario2",
-            "line": 30
-          }
-        ],
-        "type": "scenario"
-      }
-    ],
-    "id": "standings-service-e2e-features",
-    "line": 2,
-    "keyword": "Feature",
-    "name": "Standings Service E2E Features",
-    "tags": [
-      {
-        "name": "@E2E",
-        "line": 1
-      }
-    ],
-    "uri": "features/cucumberstudio/E2E.feature"
-  },
-  {
-    "description": "",
-    "elements": [
-      {
-        "description": "",
-        "id": "match-service-gateway-unit-feature;get-all-matches-from-match-service-gateway",
-        "keyword": "Scenario Outline",
-        "line": 7,
-        "name": "Get all matches from Match Service Gateway",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 40000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 8,
-            "name": "there are boxers such as \"Unit_MatchServiceGateway_Scenario1.boxers\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:32"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 7000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 9,
-            "name": "there are matches such as \"Unit_MatchServiceGateway_Scenario1.matches\"",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 9,
-            "name": "\"GetAllStandings\" is called",
-            "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
             "line": 10,
             "name": "response is as \"H2_Scenario1_Variation1.expected_response\"",
             "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
+              "location": "features/step_definitions/step_definitions.js:48"
             },
             "result": {
               "status": "passed",
-              "duration": 102000000
+              "duration": 112000000
             }
           },
           {
@@ -690,7 +421,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 38000000
+              "duration": 4059000000
             }
           },
           {
@@ -699,11 +430,11 @@
             "line": 18,
             "name": "there is a boxer such as \"B1_Scenario1_Variation1.boxer\"",
             "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
+              "location": "features/step_definitions/step_definitions.js:24"
             },
             "result": {
               "status": "passed",
-              "duration": 6000000
+              "duration": 107000000
             }
           },
           {
@@ -712,11 +443,11 @@
             "line": 19,
             "name": "there are matches such as \"B1_Scenario1_Variation1.matches\"",
             "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
+              "location": "features/step_definitions/step_definitions.js:52"
             },
             "result": {
               "status": "passed",
-              "duration": 0
+              "duration": 5000000
             }
           },
           {
@@ -725,7 +456,7 @@
             "line": 20,
             "name": "\"GetStandingAndMatchesOfBoxer\" is called with \"B1_Scenario1_Variation1.request_body\"",
             "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
+              "location": "features/step_definitions/step_definitions.js:40"
             },
             "result": {
               "status": "passed",
@@ -738,11 +469,11 @@
             "line": 21,
             "name": "response is as \"B1_Scenario1_Variation1.expected_response\"",
             "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
+              "location": "features/step_definitions/step_definitions.js:48"
             },
             "result": {
               "status": "passed",
-              "duration": 102000000
+              "duration": 109000000
             }
           },
           {
@@ -781,8 +512,9 @@
             "keyword": "Before",
             "hidden": true,
             "result": {
-              "status": "passed",
-              "duration": 40000000
+              "status": "failed",
+              "duration": 5011000000,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.time_1.default.setTimeout [as _onTimeout] (/home/arman/Desktop/standings/node_modules/@cucumber/cucumber/lib/user_code_runner.js:63:28)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)"
             }
           },
           {
@@ -791,11 +523,11 @@
             "line": 29,
             "name": "there is a boxer such as \"B1_Scenario2_Fail1.boxer\"",
             "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
+              "location": "features/step_definitions/step_definitions.js:24"
             },
             "result": {
-              "status": "passed",
-              "duration": 7000000
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -804,11 +536,11 @@
             "line": 30,
             "name": "there are matches such as \"B1_Scenario2_Fail1.matches\"",
             "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
+              "location": "features/step_definitions/step_definitions.js:52"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -817,11 +549,11 @@
             "line": 31,
             "name": "\"GetStandingAndMatchesOfBoxer\" is called with \"B1_Scenario2_Fail1.request_body\"",
             "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
+              "location": "features/step_definitions/step_definitions.js:40"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -830,11 +562,11 @@
             "line": 32,
             "name": "response is as \"B1_Scenario2_Fail1.expected_response\"",
             "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
+              "location": "features/step_definitions/step_definitions.js:48"
             },
             "result": {
-              "status": "passed",
-              "duration": 104000000
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -842,7 +574,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 0
+              "duration": 1000000
             }
           }
         ],
@@ -880,6 +612,300 @@
     "elements": [
       {
         "description": "",
+        "id": "standings-service-e2e-features;get-all-standings-(1)-(uid:1dc0b40d-14f2-4d99-a12f-34dc0e260946)",
+        "keyword": "Scenario Outline",
+        "line": 6,
+        "name": "Get all standings (1) (uid:1dc0b40d-14f2-4d99-a12f-34dc0e260946)",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 5005000000,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.time_1.default.setTimeout [as _onTimeout] (/home/arman/Desktop/standings/node_modules/@cucumber/cucumber/lib/user_code_runner.js:63:28)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "there are boxers such as \"H2_Scenario1_Variation1.boxers\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:32"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "there are matches such as \"H2_Scenario1_Variation1.matches\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:52"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "\"GetAllStandings\" is called",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:44"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "response is as \"H2_Scenario1_Variation1.expected_response\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:48"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@E2E",
+            "line": 1
+          },
+          {
+            "name": "@H2",
+            "line": 5
+          },
+          {
+            "name": "@H2_Scenario1",
+            "line": 5
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "standings-service-e2e-features;get-standing-and-matches-of-a-boxer-(1)-(uid:831af4f9-7e25-40a7-8a90-d7c284f4c403)",
+        "keyword": "Scenario Outline",
+        "line": 17,
+        "name": "Get standing and matches of a boxer (1) (uid:831af4f9-7e25-40a7-8a90-d7c284f4c403)",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 3243000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "there is a boxer such as \"B1_Scenario1_Variation1.boxer\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 105000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "there are matches such as \"B1_Scenario1_Variation1.matches\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "\"GetStandingAndMatchesOfBoxer\" is called with \"B1_Scenario1_Variation1.request_body\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "response is as \"B1_Scenario1_Variation1.expected_response\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 101000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@E2E",
+            "line": 1
+          },
+          {
+            "name": "@B1",
+            "line": 16
+          },
+          {
+            "name": "@B1_Scenario1",
+            "line": 16
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "standings-service-e2e-features;get-standing-and-matches-of-a-boxer-failure-(1)-(uid:9e61e58f-8a6d-4539-904b-3aa1196ae339)",
+        "keyword": "Scenario Outline",
+        "line": 28,
+        "name": "Get standing and matches of a boxer failure (1) (uid:9e61e58f-8a6d-4539-904b-3aa1196ae339)",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 5008000000,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.time_1.default.setTimeout [as _onTimeout] (/home/arman/Desktop/standings/node_modules/@cucumber/cucumber/lib/user_code_runner.js:63:28)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 29,
+            "name": "there is a boxer such as \"B1_Scenario2_Fail1.boxer\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:24"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "there are matches such as \"B1_Scenario2_Fail1.matches\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:52"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 31,
+            "name": "\"GetStandingAndMatchesOfBoxer\" is called with \"B1_Scenario2_Fail1.request_body\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:40"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "response is as \"B1_Scenario2_Fail1.expected_response\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:48"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@E2E",
+            "line": 1
+          },
+          {
+            "name": "@B1",
+            "line": 27
+          },
+          {
+            "name": "@B1_Scenario2",
+            "line": 27
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "standings-service-e2e-features",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Standings Service E2E Features",
+    "tags": [
+      {
+        "name": "@E2E",
+        "line": 1
+      }
+    ],
+    "uri": "features/cucumberstudio/Standings_Service_E2E_Features.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
         "id": "match-service-gateway-unit-feature;get-all-matches-from-match-service-gateway-(uid:fc087f74-f04c-40e9-993b-0bd09c15f7f4)",
         "keyword": "Scenario Outline",
         "line": 6,
@@ -889,8 +915,9 @@
             "keyword": "Before",
             "hidden": true,
             "result": {
-              "status": "passed",
-              "duration": 137000000
+              "status": "failed",
+              "duration": 5003000000,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.time_1.default.setTimeout [as _onTimeout] (/home/arman/Desktop/standings/node_modules/@cucumber/cucumber/lib/user_code_runner.js:63:28)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)"
             }
           },
           {
@@ -899,11 +926,11 @@
             "line": 7,
             "name": "there are boxers such as \"Unit_MatchServiceGateway_Scenario1.boxers\"",
             "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
+              "location": "features/step_definitions/step_definitions.js:32"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -912,10 +939,10 @@
             "line": 8,
             "name": "there are matches such as \"Unit_MatchServiceGateway_Scenario1.matches\"",
             "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
+              "location": "features/step_definitions/step_definitions.js:52"
             },
             "result": {
-              "status": "passed",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -925,10 +952,10 @@
             "line": 9,
             "name": "\"getAllMatches\" is invoked",
             "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
+              "location": "features/step_definitions/step_definitions.js:60"
             },
             "result": {
-              "status": "passed",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -938,11 +965,11 @@
             "line": 10,
             "name": "returned data is as \"Unit_MatchServiceGateway_Scenario1.expected_data\"",
             "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
+              "location": "features/step_definitions/step_definitions.js:64"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -950,7 +977,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 0
+              "duration": 1000000
             }
           }
         ],
@@ -985,8 +1012,9 @@
             "keyword": "Before",
             "hidden": true,
             "result": {
-              "status": "passed",
-              "duration": 140000000
+              "status": "failed",
+              "duration": 5009000000,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.time_1.default.setTimeout [as _onTimeout] (/home/arman/Desktop/standings/node_modules/@cucumber/cucumber/lib/user_code_runner.js:63:28)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)"
             }
           },
           {
@@ -995,11 +1023,11 @@
             "line": 18,
             "name": "there are boxers such as \"Unit_MatchServiceGateway_Scenario2.boxers\"",
             "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
+              "location": "features/step_definitions/step_definitions.js:32"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -1008,10 +1036,10 @@
             "line": 19,
             "name": "there are matches such as \"Unit_MatchServiceGateway_Scenario2.matches\"",
             "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
+              "location": "features/step_definitions/step_definitions.js:52"
             },
             "result": {
-              "status": "passed",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1021,11 +1049,11 @@
             "line": 20,
             "name": "\"getMatchesOfBoxer\" is invoked with \"Unit_MatchServiceGateway_Scenario2.boxer_id\"",
             "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
+              "location": "features/step_definitions/step_definitions.js:56"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -1034,11 +1062,11 @@
             "line": 21,
             "name": "returned data is as \"Unit_MatchServiceGateway_Scenario2.expected_data\"",
             "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
+              "location": "features/step_definitions/step_definitions.js:64"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -1081,8 +1109,9 @@
             "keyword": "Before",
             "hidden": true,
             "result": {
-              "status": "passed",
-              "duration": 141000000
+              "status": "failed",
+              "duration": 5003000000,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.time_1.default.setTimeout [as _onTimeout] (/home/arman/Desktop/standings/node_modules/@cucumber/cucumber/lib/user_code_runner.js:63:28)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)"
             }
           },
           {
@@ -1091,10 +1120,10 @@
             "line": 29,
             "name": "there are boxers such as \"Unit_MatchServiceGateway_Scenario3_Fail1.boxers\"",
             "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
+              "location": "features/step_definitions/step_definitions.js:32"
             },
             "result": {
-              "status": "passed",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1104,11 +1133,11 @@
             "line": 30,
             "name": "there are matches such as \"Unit_MatchServiceGateway_Scenario3_Fail1.matches\"",
             "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
+              "location": "features/step_definitions/step_definitions.js:52"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -1117,10 +1146,10 @@
             "line": 31,
             "name": "\"getMatchesOfBoxer\" is invoked with \"Unit_MatchServiceGateway_Scenario3_Fail1.boxer_id\"",
             "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
+              "location": "features/step_definitions/step_definitions.js:56"
             },
             "result": {
-              "status": "passed",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1130,11 +1159,11 @@
             "line": 32,
             "name": "returned data is as \"Unit_MatchServiceGateway_Scenario3_Fail1.expected_data\"",
             "match": {
-              "location": "features/step_definitions/step_definitions.js:3"
+              "location": "features/step_definitions/step_definitions.js:64"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "skipped",
+              "duration": 0
             }
           },
           {

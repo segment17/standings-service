@@ -15,8 +15,6 @@ async function bindGetStandingAndMatchesOfBoxer(call, callback) {
   callback(null, r);
 }
 
-
-
 async function bindGetAllStandings(call, callback) {
   let r = await globalObjects.controller.guardGetAllStandings();
   callback(null, r);
@@ -60,11 +58,7 @@ function main() {
     SetupCleanUp: bindSetupCleanUp
   });
 
-  if (process.env.STANDINGS_SERVICE_SERVICE_PORT != undefined) {
-    server.bind("0.0.0.0" + ":" + process.env.STANDINGS_SERVICE_SERVICE_PORT, grpc.ServerCredentials.createInsecure());
-  } else {
-    server.bind("localhost:50004", grpc.ServerCredentials.createInsecure());
-  }
+  server.bind("0.0.0.0:" + (process.env.STANDINGS_SERVICE_SERVICE_PORT || "50004"), grpc.ServerCredentials.createInsecure());
   server.start();
 }
 
