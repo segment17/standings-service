@@ -1,5 +1,5 @@
 @Integration @Gateway @MatchServiceGateway
-Feature: Match Service Gateway Unit Feature
+Feature: Match Service Gateway Integration Feature
 
   #SUCCESS SCENARIOS
 
