@@ -1,0 +1,209 @@
+$ sh count.sh
+
+index.js:
+
+$ /Users/omergulen/Documents/others/s17/standings-service/node_modules/.bin/sloc index.js
+
+---------- Result ------------
+
+            Physical :  71
+              Source :  57
+             Comment :  2
+ Single-line comment :  2
+       Block comment :  0
+               Mixed :  0
+ Empty block comment :  0
+               Empty :  12
+               To Do :  0
+
+Number of files read :  1
+
+----------------------------
+
+
+GlobalObjects:
+
+$ /Users/omergulen/Documents/others/s17/standings-service/node_modules/.bin/sloc GlobalObjects.js
+
+---------- Result ------------
+
+            Physical :  69
+              Source :  51
+             Comment :  7
+ Single-line comment :  7
+       Block comment :  0
+               Mixed :  2
+ Empty block comment :  0
+               Empty :  13
+               To Do :  0
+
+Number of files read :  1
+
+----------------------------
+
+
+Dockerfile:
+
+       7
+
+Dockerfile comments:
+
+       0
+
+k8s manifests:
+
+$ /Users/omergulen/Documents/others/s17/standings-service/node_modules/.bin/sloc manifest.yaml
+
+---------- Result ------------
+
+            Physical :  33
+              Source :  33
+             Comment :  0
+ Single-line comment :  0
+       Block comment :  0
+               Mixed :  0
+ Empty block comment :  0
+               Empty :  0
+               To Do :  0
+
+Number of files read :  1
+
+----------------------------
+
+
+automations:
+
+       8 ./automate_local_1_nopush.sh
+      17 ./automate_minikube_1.sh
+      18 ./automate_minikube_1_nopush.sh
+       8 ./automate_local_1.sh
+      51 total
+
+Automations comments:
+
+      10
+
+src:
+
+$ /Users/omergulen/Documents/others/s17/standings-service/node_modules/.bin/sloc src/
+
+---------- Result ------------
+
+            Physical :  318
+              Source :  255
+             Comment :  13
+ Single-line comment :  13
+       Block comment :  0
+               Mixed :  0
+ Empty block comment :  0
+               Empty :  50
+               To Do :  1
+
+Number of files read :  4
+
+----------------------------
+
+
+proto:
+
+      41 ./proto/authservice.proto
+      90 ./proto/standingsservice.proto
+     139 ./proto/boxerservice.proto
+     130 ./proto/matchservice.proto
+     400 total
+
+features:
+
+      40 ./test/features_raw/Unit/MatchServiceGateway.feature
+      40 ./test/features_raw/Integration/MatchServiceGateway.feature
+      38 ./test/features_raw/E2E.feature
+      38 ./test/features_raw/Component.feature
+     156 total
+
+Feature comments:
+
+       8
+
+step-definitions:
+
+$ /Users/omergulen/Documents/others/s17/standings-service/node_modules/.bin/sloc features/step_definitions
+
+---------- Result ------------
+
+            Physical :  66
+              Source :  53
+             Comment :  1
+ Single-line comment :  1
+       Block comment :  0
+               Mixed :  0
+ Empty block comment :  0
+               Empty :  12
+               To Do :  0
+
+Number of files read :  1
+
+----------------------------
+
+
+scenario-testers:
+
+$ /Users/omergulen/Documents/others/s17/standings-service/node_modules/.bin/sloc test/ScenarioTesters
+
+---------- Result ------------
+
+            Physical :  242
+              Source :  189
+             Comment :  13
+ Single-line comment :  2
+       Block comment :  11
+               Mixed :  0
+ Empty block comment :  1
+               Empty :  41
+               To Do :  0
+
+Number of files read :  4
+
+----------------------------
+
+
+test-data:
+
+$ /Users/omergulen/Documents/others/s17/standings-service/node_modules/.bin/sloc test/TestData.js
+
+---------- Result ------------
+
+            Physical :  203
+              Source :  181
+             Comment :  10
+ Single-line comment :  6
+       Block comment :  4
+               Mixed :  0
+ Empty block comment :  0
+               Empty :  12
+               To Do :  0
+
+Number of files read :  1
+
+----------------------------
+
+
+test-functions:
+
+$ /Users/omergulen/Documents/others/s17/standings-service/node_modules/.bin/sloc test/TestFunctions.js
+
+---------- Result ------------
+
+            Physical :  49
+              Source :  38
+             Comment :  2
+ Single-line comment :  2
+       Block comment :  0
+               Mixed :  0
+ Empty block comment :  0
+               Empty :  9
+               To Do :  0
+
+Number of files read :  1
+
+----------------------------
+
