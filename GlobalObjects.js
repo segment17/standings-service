@@ -6,9 +6,9 @@ const MockMatchServiceGateway = require('./src/Gateway/Mock/MockMatchServiceGate
 // GRPC SETUP
 const grpc = require('grpc');
 const protoLoader = require('@grpc/proto-loader');
-const PROTO_PATH = __dirname + '/proto/standingsservice.proto';
+const PROTO_PATH = __dirname + '/proto/ubc.proto';
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, { keepCase: true, longs: String, enums: String, defaults: true, oneofs: true });
-const standingsservice_package = grpc.loadPackageDefinition(packageDefinition).standingsservice_package;
+const ubc_package = grpc.loadPackageDefinition(packageDefinition).ubc_package;
 // GRPC SETUP
 
 class GlobalObjects {
@@ -20,7 +20,7 @@ class GlobalObjects {
     this.mediator = new Mediator();
     this.matchServiceGateway = new MatchServiceGateway();
 
-    this.client = new standingsservice_package.StandingsService("0.0.0.0:" + (process.env.STANDINGS_SERVICE_SERVICE_PORT || 50004), grpc.credentials.createInsecure());
+    this.client = new ubc_package.StandingsService("0.0.0.0:" + (process.env.STANDINGS_SERVICE_SERVICE_PORT || 50004), grpc.credentials.createInsecure());
   }
 
   // Mock everything...
@@ -49,9 +49,9 @@ class GlobalObjects {
 
     // Connect to Kubernetes if possible
     if (process.env.STANDINGS_SERVICE_SERVICE_PORT != undefined) {
-      this.client = new standingsservice_package.StandingsService("0.0.0.0" + ":" + process.env.STANDINGS_SERVICE_SERVICE_PORT, grpc.credentials.createInsecure());
+      this.client = new ubc_package.StandingsService("0.0.0.0" + ":" + process.env.STANDINGS_SERVICE_SERVICE_PORT, grpc.credentials.createInsecure());
     } else {
-      this.client = new standingsservice_package.StandingsService("0.0.0.0:50004", grpc.credentials.createInsecure());
+      this.client = new ubc_package.StandingsService("0.0.0.0:50004", grpc.credentials.createInsecure());
     }
   }
 

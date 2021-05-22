@@ -1,16 +1,16 @@
 // GRPC SETUP
 const grpc = require('grpc');
 const protoLoader = require('@grpc/proto-loader');
-const PROTO_PATH = __dirname + '../../../proto/matchservice.proto';
+const PROTO_PATH = __dirname + '../../../proto/ubc.proto';
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, { keepCase: true, longs: String, enums: String, defaults: true, oneofs: true });
-const matchservice_package = grpc.loadPackageDefinition(packageDefinition).matchservice_package;
+const ubc_package = grpc.loadPackageDefinition(packageDefinition).ubc_package;
 // GRPC SETUP
 
 class MatchServiceGateway {
 
   readyClient() {
     if (this.client == undefined || this.client == null) {
-      this.client = new matchservice_package.MatchService((process.env.MATCH_SERVICE_SERVICE_HOST || "0.0.0.0") + ":" + (process.env.MATCH_SERVICE_SERVICE_PORT || "50003"), grpc.credentials.createInsecure());
+      this.client = new ubc_package.MatchService((process.env.MATCH_SERVICE_SERVICE_HOST || "0.0.0.0") + ":" + (process.env.MATCH_SERVICE_SERVICE_PORT || "50003"), grpc.credentials.createInsecure());
     }
   }
 

@@ -5,9 +5,9 @@ module.exports = globalObjects;
 // GRPC SETUP
 const grpc = require('grpc');
 const protoLoader = require('@grpc/proto-loader');
-const PROTO_PATH = __dirname + '/proto/standingsservice.proto';
+const PROTO_PATH = __dirname + '/proto/ubc.proto';
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, { keepCase: true, longs: String, enums: String, defaults: true, oneofs: true });
-const standingsservice_package = grpc.loadPackageDefinition(packageDefinition).standingsservice_package;
+const ubc_package = grpc.loadPackageDefinition(packageDefinition).ubc_package;
 // GRPC SETUP
 
 async function bindGetStandingAndMatchesOfBoxer(call, callback) {
@@ -48,7 +48,7 @@ async function bindSetupCleanUp(call, callback) {
 function main() {
   console.log("Server running...");
   server = new grpc.Server();
-  server.addService(standingsservice_package.StandingsService.service, {
+  server.addService(ubc_package.StandingsService.service, {
     GetStandingAndMatchesOfBoxer: bindGetStandingAndMatchesOfBoxer,
     GetAllStandings: bindGetAllStandings,
     Mock: bindMock,

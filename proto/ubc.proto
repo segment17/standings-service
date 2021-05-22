@@ -1,0 +1,262 @@
+syntax = "proto3";
+
+package ubc_package;
+
+message Boxer {
+  int32 id = 1;
+  string fullName = 2;
+  int64 birthDate = 3;
+  int32 height = 4;
+  double weight = 5;
+}
+message Match {
+  int32 id = 1;
+  int32 homeBoxerId = 2;
+  int32 awayBoxerId = 3;
+  int64 matchTime = 4;
+  bool isFinished = 5;
+  optional int32 winnerBoxerId = 6;
+}
+message Standing {
+  int32 boxerId = 1;
+  int32 winCount = 2;
+  int32 lossCount = 3;
+  double score = 4;
+}
+message StandingAndMatches {
+  Standing standing = 1;
+  repeated Match matches = 2;
+}
+message Empty {};
+message Null {};
+
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+message ValidateRequest {
+  string token = 1;
+}
+message LoginResponse {
+  int32 code = 1;
+  string message = 2;
+  string token = 3;
+}
+message ValidateResponse {
+  int32 code = 1;
+  string message = 2;
+}
+service AuthService {
+  rpc Login(LoginRequest) returns (LoginResponse) {};
+  rpc Validate(ValidateRequest) returns (ValidateResponse) {};
+
+  rpc Mock(Empty) returns (Empty) {};
+  rpc EnterIntegratedTestingEnvironment(Empty) returns (Empty) {};
+  rpc SetupAddAdmin(SetupAddAdminRequest) returns (Empty) {};
+}
+
+message GetBoxerRequest {
+  int32 id = 1;
+}
+message GetBoxerResponse {
+  int32 code = 1;
+  string message = 2;
+  Boxer boxer = 3;
+}
+message GetBoxerWithStandingAndMatchesRequest {
+  int32 id = 1;
+}
+message GetBoxerWithStandingAndMatchesResponse {
+  int32 code = 1;
+  string message = 2;
+  Boxer boxer = 3;
+  StandingAndMatches standingAndMatches = 4;
+}
+message AddBoxerRequest {
+  string fullName = 1;
+  int64 birthDate = 2;
+  int32 height = 3;
+  double weight = 4;
+  string token = 5;
+}
+message AddBoxerResponse {
+  int32 code = 1;
+  string message = 2;
+  Boxer boxer = 3;
+}
+message EditBoxerRequest {
+  int32 id = 1;
+  optional string fullName = 2;
+  optional int64 birthDate = 3;
+  optional int32 height = 4;
+  optional double weight = 5;
+  string token = 6;
+}
+message EditBoxerResponse {
+  int32 code = 1;
+  string message = 2;
+  Boxer boxer = 3;
+}
+message RemoveBoxerRequest {
+  int32 id = 1;
+  string token = 2;
+}
+message RemoveBoxerResponse {
+  int32 code = 1;
+  string message = 2;
+  Boxer boxer = 3;
+}
+service BoxerService {
+  rpc GetBoxer(GetBoxerRequest) returns (GetBoxerResponse) {};
+  rpc GetBoxerWithStandingAndMatches(GetBoxerWithStandingAndMatchesRequest) returns (GetBoxerWithStandingAndMatchesResponse) {};
+  rpc AddBoxer(AddBoxerRequest) returns (AddBoxerResponse) {};
+  rpc EditBoxer(EditBoxerRequest) returns (EditBoxerResponse) {};
+  rpc RemoveBoxer(RemoveBoxerRequest) returns (RemoveBoxerResponse) {};
+
+  rpc Mock(Null) returns (Null) {};
+  rpc EnterIntegratedTestingEnvironment(Null) returns (Null) {};
+  rpc SetupAddBoxer(SetupAddBoxerRequest) returns (SetupAddBoxerResponse) {};
+  rpc SetupAddLatestBoxer(SetupAddBoxerRequest) returns (SetupAddBoxerResponse) {};
+  rpc SetupClearBoxers(Null) returns (SetupClearBoxersResponse) {};
+  rpc SetupAddStandingAndMatches(SetupAddStandingAndMatchesRequest) returns (SetupAddBoxerResponse) {};
+  rpc SetupAddToken(SetupAddTokenRequest) returns (SetupAddTokenResponse) {};
+  rpc SetupAddMatches(SetupAddMatchesRequest) returns (SetupAddMatchesResponse);
+}
+
+message GetAllMatchesResponse {
+  int32 code = 1;
+  string message = 2;
+  repeated Match matches = 3;
+}
+message GetMatchesOfBoxerRequest {
+  int32 boxerId = 1;
+}
+message GetMatchesOfBoxerResponse {
+  int32 code = 1;
+  string message = 2;
+  Boxer boxer = 3;
+  repeated Match matches = 4;
+}
+message UpdateMatchRequest {
+  int32 id = 1;
+  optional int32 homeBoxerId = 2;
+  optional int32 awayBoxerId = 3;
+  optional int64 matchTime = 4;
+  optional bool isFinished = 5;
+  optional int32 winnerBoxerId = 6;
+  string token = 7;
+}
+message UpdateMatchResponse {
+  int32 code = 1;
+  string message = 2;
+}
+message AddMatchRequest {
+  int32 homeBoxerId = 1;
+  int32 awayBoxerId = 2;
+  int64 matchTime = 3;
+  bool isFinished = 4;
+  optional int32 winnerBoxerId = 5;
+  string token = 6;
+}
+message AddMatchResponse {
+  int32 code = 1;
+  string message = 2;
+}
+message RemoveMatchRequest {
+  int32 id = 1;
+  string token = 2;
+}
+message RemoveMatchResponse {
+  int32 code = 1;
+  string message = 2;
+}
+message RemoveMatchesOfBoxerRequest {
+  int32 boxerId = 1;
+  string token = 2;
+}
+message RemoveMatchesOfBoxerResponse {
+  int32 code = 1;
+  string message = 2;
+}
+service MatchService {
+  rpc AddMatch(AddMatchRequest) returns (AddMatchResponse);
+  rpc RemoveMatch(RemoveMatchRequest) returns (RemoveMatchResponse);
+  rpc UpdateMatch(UpdateMatchRequest) returns (UpdateMatchResponse);
+  rpc RemoveMatchesOfBoxer(RemoveMatchesOfBoxerRequest) returns (RemoveMatchesOfBoxerResponse);
+  rpc GetAllMatches(Empty) returns (GetAllMatchesResponse);
+  rpc GetMatchesOfBoxer(GetMatchesOfBoxerRequest) returns (GetMatchesOfBoxerResponse);
+
+  rpc SetupAddBoxers(SetupAddBoxersRequest) returns (SetupAddBoxersResponse);
+  rpc SetupAddMatches(SetupAddMatchesRequest) returns (SetupAddMatchesResponse);
+  rpc SetupAddAdmin(SetupAddAdminRequest) returns (SetupAddAdminResponse);
+  rpc SetupCleanUp(Empty) returns (SetupCleanUpResponse);
+  rpc Mock(Empty) returns (Empty) {};
+}
+
+message GetAllStandingsResponse {
+  int32 code = 1;
+  string message = 2;
+  repeated Standing standings = 3;
+}
+message GetStandingAndMatchesOfBoxerRequest {
+  int32 boxerId = 1;
+}
+message GetStandingAndMatchesOfBoxerResponse {
+  int32 code = 1;
+  string message = 2;
+  StandingAndMatches standingAndMatches = 3;
+}
+service StandingsService {
+  rpc GetStandingAndMatchesOfBoxer(GetStandingAndMatchesOfBoxerRequest) returns (GetStandingAndMatchesOfBoxerResponse);
+  rpc GetAllStandings(Null) returns (GetAllStandingsResponse);
+
+  rpc Mock(Null) returns (Null) {};
+  rpc SetupAddBoxer(SetupAddBoxerRequest) returns (SetupAddBoxerResponse) {};
+  rpc SetupAddBoxers(SetupAddBoxersRequest) returns (SetupAddBoxersResponse) {};
+  rpc SetupAddMatches(SetupAddMatchesRequest) returns (SetupAddMatchesResponse) {};
+  rpc SetupCleanUp(Null) returns (SetupCleanUpResponse) {};
+}
+
+message SetupAddBoxersRequest {
+  repeated Boxer boxers = 1;
+}
+message SetupAddBoxersResponse {
+  int32 code = 1;
+}
+message SetupAddAdminResponse {
+  int32 code = 1;
+}
+message SetupCleanUpResponse {
+  int32 code = 1;
+}
+message SetupAddBoxerRequest {
+  Boxer boxer = 1;
+}
+message SetupAddBoxerResponse {
+  int32 code = 1;
+}
+message SetupClearBoxersResponse {
+  int32 code = 1;
+}
+message SetupAddStandingAndMatchesRequest {
+  StandingAndMatches standingAndMatches = 1;
+}
+message SetupAddStandingAndMatchesResponse {
+  int32 code = 1;
+}
+message SetupAddTokenRequest {
+  string token = 1;
+}
+message SetupAddTokenResponse {
+  int32 code = 1;
+}
+message SetupAddMatchesRequest {
+  repeated Match matches = 1;
+}
+message SetupAddMatchesResponse {
+  int32 code = 1;
+}
+message SetupAddAdminRequest {
+  string username = 1;
+  string password_hash = 2;
+}
