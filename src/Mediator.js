@@ -7,8 +7,6 @@ class Mediator {
     this.matchServiceGateway = new MatchServiceGateway();
   }
 
-  // Endpoints
-
   calculateStandingOfBoxer(matches, boxerId) {
     let wins = 0;
     let losses = 0;
@@ -77,7 +75,6 @@ class Mediator {
     };
   }
 
-  // Mock everything.
   mock() {
     this.matchServiceGateway = new MockMatchServiceGateway();
   }

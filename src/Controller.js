@@ -6,28 +6,17 @@ class Controller {
     this.mediator = new Mediator();
   }
 
-  // Endpoint guards: guard[endpoint name]
   async guardGetStandingAndMatchesOfBoxer(request) {
-    //Do validation here
-    let response = await this.mediator.getStandingAndMatchesOfBoxer(request.boxerId);
-    // Do validation here
-    return response;
+    return await this.mediator.getStandingAndMatchesOfBoxer(request.boxerId);
   }
 
   async guardGetAllStandings() {
-    // Do validation here
-
-    let response = await this.mediator.getAllStandings();
-    // Do validation here
-    return response;
+    return await this.mediator.getAllStandings();
   }
 
-  // Mock
   mock() {
-    // Assign to mediator to mock everything it has.
     this.mediator.mock();
   }
-
 }
 
 module.exports = Controller;

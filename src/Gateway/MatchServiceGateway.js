@@ -10,15 +10,10 @@ class MatchServiceGateway {
 
   readyClient() {
     if (this.client == undefined || this.client == null) {
-      if (process.env.MATCH_SERVICE_SERVICE_PORT != undefined) {
-        this.client = new matchservice_package.MatchService(process.env.MATCH_SERVICE_SERVICE_HOST + ":" + process.env.MATCH_SERVICE_SERVICE_PORT, grpc.credentials.createInsecure());
-      } else {
-        this.client = new matchservice_package.MatchService("0.0.0.0:50003", grpc.credentials.createInsecure());
-      }
+      this.client = new matchservice_package.MatchService((process.env.MATCH_SERVICE_SERVICE_HOST || "0.0.0.0") + ":" + (process.env.MATCH_SERVICE_SERVICE_PORT || "50003"), grpc.credentials.createInsecure());
     }
   }
 
-  // Gateway exposed function
   async getMatchesOfBoxer(param) {
     let response = await this.doCallForGetMatchesOfBoxer(param);
     return response;
@@ -38,7 +33,6 @@ class MatchServiceGateway {
   async PROMISE_doCallForGetMatchesOfBoxer(obj) {
     return new Promise((resolve, reject) => {
       this.client.GetMatchesOfBoxer({ boxerId: obj }, function (err, res) {
-
         resolve(res);
       });
     });
@@ -53,7 +47,6 @@ class MatchServiceGateway {
   async PROMISE_doCallForGetAllMatches() {
     return new Promise((resolve, reject) => {
       this.client.GetAllMatches({}, function (err, res) {
-        ('res: ', res);
         resolve(res);
       });
     });
@@ -96,14 +89,12 @@ class MatchServiceGateway {
   async PROMISE_doCallForSetupAddBoxers(data) {
     return new Promise((resolve, reject) => {
       this.client.SetupAddBoxers({ boxers: data }, function (err, res) {
-        ('res: ', res);
         resolve(res);
       });
     });
   }
 
   extractMatchesFromResponse(response) {
-    //TODO Parse response here...
     return response.matches;
   }
 
@@ -119,9 +110,6 @@ class MatchServiceGateway {
       });
     });
   }
-
-
-
 }
 
 module.exports = MatchServiceGateway;

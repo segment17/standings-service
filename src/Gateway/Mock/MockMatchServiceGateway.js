@@ -18,7 +18,6 @@ class MockMatchServiceGateway extends MatchServiceGateway {
       }
     }
     if(!boxer) {
-      
       return {
         code: 404,
         message: "not_found",

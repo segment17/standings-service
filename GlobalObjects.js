@@ -20,12 +20,7 @@ class GlobalObjects {
     this.mediator = new Mediator();
     this.matchServiceGateway = new MatchServiceGateway();
 
-    // Connect to Kubernetes if possible
-    if (process.env.STANDINGS_SERVICE_SERVICE_PORT != undefined) {
-      this.client = new standingsservice_package.StandingsService("0.0.0.0" + ":" + process.env.STANDINGS_SERVICE_SERVICE_PORT, grpc.credentials.createInsecure());
-    } else {
-      this.client = new standingsservice_package.StandingsService("0.0.0.0:50004", grpc.credentials.createInsecure());
-    }
+    this.client = new standingsservice_package.StandingsService("0.0.0.0:" + (process.env.STANDINGS_SERVICE_SERVICE_PORT || 50004), grpc.credentials.createInsecure());
   }
 
   // Mock everything...
