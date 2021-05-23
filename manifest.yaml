@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - name: standings-service
-        image: segment17hub/standingsservice
+        imagePullPolicy: IfNotPresent
+        image: segment17hub/standingsservice:0.1
         ports:
         - containerPort: 50051
 ---
@@ -34,3 +35,14 @@ spec:
     - name: grpc
       port: 50051
       targetPort: 50051
+---
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: standings-service
+spec:
+  grpc: True
+  prefix: /ubc_package.StandingsService/
+  rewrite: /ubc_package.StandingsService/
+  service: standings-service
+---
