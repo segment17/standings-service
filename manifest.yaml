@@ -44,5 +44,5 @@ spec:
   grpc: True
   prefix: /ubc_package.StandingsService/
   rewrite: /ubc_package.StandingsService/
-  service: standings-service
+  service: standings-service:50051
 ---
