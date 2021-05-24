@@ -264,7 +264,7 @@ function main() {
   <span class="missing-if-branch" title="if path not taken" >I</span>if (process.env.STANDINGS_SERVICE_SERVICE_PORT != undefined) {
 <span class="cstat-no" title="statement not covered" >    server.bind("0.0.0.0" + ":" + process.env.STANDINGS_SERVICE_SERVICE_PORT, grpc.ServerCredentials.createInsecure());</span>
   } else {
-    server.bind("localhost:50004", grpc.ServerCredentials.createInsecure());
+    server.bind("localhost:50054", grpc.ServerCredentials.createInsecure());
   }
   server.start();
 }

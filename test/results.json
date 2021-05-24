@@ -4,17 +4,17 @@
     "elements": [
       {
         "description": "",
-        "id": "match-service-gateway-unit-feature;get-all-matches-from-match-service-gateway-(1)-(uid:d91426a7-ffae-4340-b3f6-27a06cbf2315)",
+        "id": "match-service-gateway-unit-feature;get-all-matches-from-match-service-gateway-(1)-(uid:7b00598e-185f-41a4-b7f1-5476f1d2547d)",
         "keyword": "Scenario Outline",
         "line": 6,
-        "name": "Get all matches from Match Service Gateway (1) (uid:d91426a7-ffae-4340-b3f6-27a06cbf2315)",
+        "name": "Get all matches from Match Service Gateway (1) (uid:7b00598e-185f-41a4-b7f1-5476f1d2547d)",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 5000000
+              "duration": 34000000
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 999000000
+              "duration": 13000000
             }
           },
           {
@@ -65,9 +65,8 @@
               "location": "features/step_definitions/step_definitions.js:64"
             },
             "result": {
-              "status": "failed",
-              "duration": 5002000000,
-              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.time_1.default.setTimeout [as _onTimeout] (/home/arman/Desktop/standings/node_modules/@cucumber/cucumber/lib/user_code_runner.js:63:28)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)"
+              "status": "passed",
+              "duration": 105000000
             }
           },
           {
@@ -75,7 +74,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 0
             }
           }
         ],
@@ -101,17 +100,17 @@
       },
       {
         "description": "",
-        "id": "match-service-gateway-unit-feature;get-matches-of-boxer-from-match-service-gateway-(1)-(uid:79b1f0f6-6dfd-44af-b0e0-6eeab2b4d076)",
+        "id": "match-service-gateway-unit-feature;get-matches-of-boxer-from-match-service-gateway-(1)-(uid:eeb30bc8-57f1-420e-93ee-378f2ed4e949)",
         "keyword": "Scenario Outline",
         "line": 17,
-        "name": "Get matches of boxer from Match Service Gateway (1) (uid:79b1f0f6-6dfd-44af-b0e0-6eeab2b4d076)",
+        "name": "Get matches of boxer from Match Service Gateway (1) (uid:eeb30bc8-57f1-420e-93ee-378f2ed4e949)",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 0
+              "duration": 28000000
             }
           },
           {
@@ -124,7 +123,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3839000000
+              "duration": 4000000
             }
           },
           {
@@ -162,9 +161,8 @@
               "location": "features/step_definitions/step_definitions.js:64"
             },
             "result": {
-              "status": "failed",
-              "duration": 5005000000,
-              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.time_1.default.setTimeout [as _onTimeout] (/home/arman/Desktop/standings/node_modules/@cucumber/cucumber/lib/user_code_runner.js:63:28)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)"
+              "status": "passed",
+              "duration": 105000000
             }
           },
           {
@@ -198,17 +196,17 @@
       },
       {
         "description": "",
-        "id": "match-service-gateway-unit-feature;get-matches-of-boxer-from-match-service-gateway-failure-(1)-(uid:073535fd-d3ee-43b7-b9fe-c976a21dd18b)",
+        "id": "match-service-gateway-unit-feature;get-matches-of-boxer-from-match-service-gateway-failure-(1)-(uid:8920c9e9-0a79-481a-b8a9-d873f4ec779a)",
         "keyword": "Scenario Outline",
         "line": 28,
-        "name": "Get matches of boxer from Match Service Gateway failure (1) (uid:073535fd-d3ee-43b7-b9fe-c976a21dd18b)",
+        "name": "Get matches of boxer from Match Service Gateway failure (1) (uid:8920c9e9-0a79-481a-b8a9-d873f4ec779a)",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 0
+              "duration": 25000000
             }
           },
           {
@@ -221,7 +219,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 824000000
+              "duration": 3000000
             }
           },
           {
@@ -259,9 +257,8 @@
               "location": "features/step_definitions/step_definitions.js:64"
             },
             "result": {
-              "status": "failed",
-              "duration": 5007000000,
-              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.time_1.default.setTimeout [as _onTimeout] (/home/arman/Desktop/standings/node_modules/@cucumber/cucumber/lib/user_code_runner.js:63:28)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)"
+              "status": "passed",
+              "duration": 104000000
             }
           },
           {
@@ -319,17 +316,17 @@
     "elements": [
       {
         "description": "",
-        "id": "standings-service-component-features;get-all-standings-(uid:746d4081-ba02-4b08-ac9b-eb2a4aa23b33)",
+        "id": "standings-service-component-features;get-all-standings-(uid:e188ba6c-d9fc-4d75-ba8f-82b700975d5a)",
         "keyword": "Scenario Outline",
         "line": 6,
-        "name": "Get all standings (uid:746d4081-ba02-4b08-ac9b-eb2a4aa23b33)",
+        "name": "Get all standings (uid:e188ba6c-d9fc-4d75-ba8f-82b700975d5a)",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 102000000
+              "duration": 131000000
             }
           },
           {
@@ -342,7 +339,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 109000000
+              "duration": 104000000
             }
           },
           {
@@ -355,7 +352,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 0
+              "duration": 1000000
             }
           },
           {
@@ -368,7 +365,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 0
             }
           },
           {
@@ -381,7 +378,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 112000000
+              "duration": 103000000
             }
           },
           {
@@ -389,7 +386,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 0
             }
           }
         ],
@@ -411,17 +408,17 @@
       },
       {
         "description": "",
-        "id": "standings-service-component-features;get-standing-and-matches-of-a-boxer-(uid:50ead921-bb7d-4485-a2f9-580c8df24834)",
+        "id": "standings-service-component-features;get-standing-and-matches-of-a-boxer-(uid:b5d3db3d-7ddd-4370-91a8-4dc61c6a46f4)",
         "keyword": "Scenario Outline",
         "line": 17,
-        "name": "Get standing and matches of a boxer (uid:50ead921-bb7d-4485-a2f9-580c8df24834)",
+        "name": "Get standing and matches of a boxer (uid:b5d3db3d-7ddd-4370-91a8-4dc61c6a46f4)",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 4059000000
+              "duration": 133000000
             }
           },
           {
@@ -434,7 +431,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 107000000
+              "duration": 102000000
             }
           },
           {
@@ -447,7 +444,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5000000
+              "duration": 0
             }
           },
           {
@@ -473,7 +470,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 109000000
+              "duration": 105000000
             }
           },
           {
@@ -503,18 +500,17 @@
       },
       {
         "description": "",
-        "id": "standings-service-component-features;get-standing-and-matches-of-a-boxer-failure-(uid:2eb9ebdf-f014-4523-aa12-23baea3ef1e9)",
+        "id": "standings-service-component-features;get-standing-and-matches-of-a-boxer-failure-(uid:876d5067-c56c-467b-a15e-bd7611c0bc28)",
         "keyword": "Scenario Outline",
         "line": 28,
-        "name": "Get standing and matches of a boxer failure (uid:2eb9ebdf-f014-4523-aa12-23baea3ef1e9)",
+        "name": "Get standing and matches of a boxer failure (uid:876d5067-c56c-467b-a15e-bd7611c0bc28)",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
-              "status": "failed",
-              "duration": 5011000000,
-              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.time_1.default.setTimeout [as _onTimeout] (/home/arman/Desktop/standings/node_modules/@cucumber/cucumber/lib/user_code_runner.js:63:28)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)"
+              "status": "passed",
+              "duration": 122000000
             }
           },
           {
@@ -526,8 +522,8 @@
               "location": "features/step_definitions/step_definitions.js:24"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 105000000
             }
           },
           {
@@ -539,7 +535,7 @@
               "location": "features/step_definitions/step_definitions.js:52"
             },
             "result": {
-              "status": "skipped",
+              "status": "passed",
               "duration": 0
             }
           },
@@ -552,7 +548,7 @@
               "location": "features/step_definitions/step_definitions.js:40"
             },
             "result": {
-              "status": "skipped",
+              "status": "passed",
               "duration": 0
             }
           },
@@ -565,8 +561,8 @@
               "location": "features/step_definitions/step_definitions.js:48"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 103000000
             }
           },
           {
@@ -574,7 +570,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 0
             }
           }
         ],
@@ -612,18 +608,17 @@
     "elements": [
       {
         "description": "",
-        "id": "standings-service-e2e-features;get-all-standings-(1)-(uid:1dc0b40d-14f2-4d99-a12f-34dc0e260946)",
+        "id": "standings-service-e2e-features;get-all-standings-(1)-(uid:d4669ab9-53d9-4522-a84d-e85648a6524b)",
         "keyword": "Scenario Outline",
         "line": 6,
-        "name": "Get all standings (1) (uid:1dc0b40d-14f2-4d99-a12f-34dc0e260946)",
+        "name": "Get all standings (1) (uid:d4669ab9-53d9-4522-a84d-e85648a6524b)",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
-              "status": "failed",
-              "duration": 5005000000,
-              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.time_1.default.setTimeout [as _onTimeout] (/home/arman/Desktop/standings/node_modules/@cucumber/cucumber/lib/user_code_runner.js:63:28)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)"
+              "status": "passed",
+              "duration": 23000000
             }
           },
           {
@@ -635,8 +630,8 @@
               "location": "features/step_definitions/step_definitions.js:32"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 104000000
             }
           },
           {
@@ -648,8 +643,8 @@
               "location": "features/step_definitions/step_definitions.js:52"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 1000000
             }
           },
           {
@@ -661,7 +656,7 @@
               "location": "features/step_definitions/step_definitions.js:44"
             },
             "result": {
-              "status": "skipped",
+              "status": "passed",
               "duration": 0
             }
           },
@@ -674,8 +669,8 @@
               "location": "features/step_definitions/step_definitions.js:48"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 104000000
             }
           },
           {
@@ -705,17 +700,17 @@
       },
       {
         "description": "",
-        "id": "standings-service-e2e-features;get-standing-and-matches-of-a-boxer-(1)-(uid:831af4f9-7e25-40a7-8a90-d7c284f4c403)",
+        "id": "standings-service-e2e-features;get-standing-and-matches-of-a-boxer-(1)-(uid:a46732a2-b0f8-455a-a601-37af847be93f)",
         "keyword": "Scenario Outline",
         "line": 17,
-        "name": "Get standing and matches of a boxer (1) (uid:831af4f9-7e25-40a7-8a90-d7c284f4c403)",
+        "name": "Get standing and matches of a boxer (1) (uid:a46732a2-b0f8-455a-a601-37af847be93f)",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 3243000000
+              "duration": 26000000
             }
           },
           {
@@ -728,7 +723,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 105000000
+              "duration": 107000000
             }
           },
           {
@@ -741,7 +736,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 0
             }
           },
           {
@@ -754,7 +749,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 0
             }
           },
           {
@@ -797,18 +792,17 @@
       },
       {
         "description": "",
-        "id": "standings-service-e2e-features;get-standing-and-matches-of-a-boxer-failure-(1)-(uid:9e61e58f-8a6d-4539-904b-3aa1196ae339)",
+        "id": "standings-service-e2e-features;get-standing-and-matches-of-a-boxer-failure-(1)-(uid:472ec720-d67b-49bf-93ad-95b8e27782cb)",
         "keyword": "Scenario Outline",
         "line": 28,
-        "name": "Get standing and matches of a boxer failure (1) (uid:9e61e58f-8a6d-4539-904b-3aa1196ae339)",
+        "name": "Get standing and matches of a boxer failure (1) (uid:472ec720-d67b-49bf-93ad-95b8e27782cb)",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
-              "status": "failed",
-              "duration": 5008000000,
-              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.time_1.default.setTimeout [as _onTimeout] (/home/arman/Desktop/standings/node_modules/@cucumber/cucumber/lib/user_code_runner.js:63:28)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)"
+              "status": "passed",
+              "duration": 25000000
             }
           },
           {
@@ -820,8 +814,8 @@
               "location": "features/step_definitions/step_definitions.js:24"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 104000000
             }
           },
           {
@@ -833,7 +827,7 @@
               "location": "features/step_definitions/step_definitions.js:52"
             },
             "result": {
-              "status": "skipped",
+              "status": "passed",
               "duration": 0
             }
           },
@@ -846,8 +840,8 @@
               "location": "features/step_definitions/step_definitions.js:40"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 1000000
             }
           },
           {
@@ -859,8 +853,8 @@
               "location": "features/step_definitions/step_definitions.js:48"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 103000000
             }
           },
           {
@@ -906,18 +900,17 @@
     "elements": [
       {
         "description": "",
-        "id": "match-service-gateway-unit-feature;get-all-matches-from-match-service-gateway-(uid:fc087f74-f04c-40e9-993b-0bd09c15f7f4)",
+        "id": "match-service-gateway-unit-feature;get-all-matches-from-match-service-gateway-(uid:7fdf2dab-907b-467d-9539-833174f9dd67)",
         "keyword": "Scenario Outline",
         "line": 6,
-        "name": "Get all matches from Match Service Gateway (uid:fc087f74-f04c-40e9-993b-0bd09c15f7f4)",
+        "name": "Get all matches from Match Service Gateway (uid:7fdf2dab-907b-467d-9539-833174f9dd67)",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
-              "status": "failed",
-              "duration": 5003000000,
-              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.time_1.default.setTimeout [as _onTimeout] (/home/arman/Desktop/standings/node_modules/@cucumber/cucumber/lib/user_code_runner.js:63:28)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)"
+              "status": "passed",
+              "duration": 124000000
             }
           },
           {
@@ -929,7 +922,7 @@
               "location": "features/step_definitions/step_definitions.js:32"
             },
             "result": {
-              "status": "skipped",
+              "status": "passed",
               "duration": 0
             }
           },
@@ -942,7 +935,7 @@
               "location": "features/step_definitions/step_definitions.js:52"
             },
             "result": {
-              "status": "skipped",
+              "status": "passed",
               "duration": 0
             }
           },
@@ -955,8 +948,8 @@
               "location": "features/step_definitions/step_definitions.js:60"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 1000000
             }
           },
           {
@@ -968,7 +961,7 @@
               "location": "features/step_definitions/step_definitions.js:64"
             },
             "result": {
-              "status": "skipped",
+              "status": "passed",
               "duration": 0
             }
           },
@@ -983,15 +976,15 @@
         ],
         "tags": [
           {
-            "name": "@Unit",
-            "line": 1
-          },
-          {
             "name": "@Gateway",
             "line": 1
           },
           {
             "name": "@MatchServiceGateway",
+            "line": 1
+          },
+          {
+            "name": "@Unit",
             "line": 1
           },
           {
@@ -1003,18 +996,17 @@
       },
       {
         "description": "",
-        "id": "match-service-gateway-unit-feature;get-matches-of-boxer-from-match-service-gateway-(uid:91443772-df8c-4cb4-995a-c1b1978a162e)",
+        "id": "match-service-gateway-unit-feature;get-matches-of-boxer-from-match-service-gateway-(uid:8f5af6d9-554f-4535-a44b-4be7e801d71d)",
         "keyword": "Scenario Outline",
         "line": 17,
-        "name": "Get matches of boxer from Match Service Gateway (uid:91443772-df8c-4cb4-995a-c1b1978a162e)",
+        "name": "Get matches of boxer from Match Service Gateway (uid:8f5af6d9-554f-4535-a44b-4be7e801d71d)",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
-              "status": "failed",
-              "duration": 5009000000,
-              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.time_1.default.setTimeout [as _onTimeout] (/home/arman/Desktop/standings/node_modules/@cucumber/cucumber/lib/user_code_runner.js:63:28)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)"
+              "status": "passed",
+              "duration": 129000000
             }
           },
           {
@@ -1026,7 +1018,7 @@
               "location": "features/step_definitions/step_definitions.js:32"
             },
             "result": {
-              "status": "skipped",
+              "status": "passed",
               "duration": 0
             }
           },
@@ -1039,7 +1031,7 @@
               "location": "features/step_definitions/step_definitions.js:52"
             },
             "result": {
-              "status": "skipped",
+              "status": "passed",
               "duration": 0
             }
           },
@@ -1052,8 +1044,8 @@
               "location": "features/step_definitions/step_definitions.js:56"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 1000000
             }
           },
           {
@@ -1065,7 +1057,7 @@
               "location": "features/step_definitions/step_definitions.js:64"
             },
             "result": {
-              "status": "skipped",
+              "status": "passed",
               "duration": 0
             }
           },
@@ -1074,21 +1066,21 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 0
+              "duration": 1000000
             }
           }
         ],
         "tags": [
-          {
-            "name": "@Unit",
-            "line": 1
-          },
           {
             "name": "@Gateway",
             "line": 1
           },
           {
             "name": "@MatchServiceGateway",
+            "line": 1
+          },
+          {
+            "name": "@Unit",
             "line": 1
           },
           {
@@ -1100,18 +1092,17 @@
       },
       {
         "description": "",
-        "id": "match-service-gateway-unit-feature;get-matches-of-boxer-from-match-service-gateway-failure-(uid:ef6a15ec-ed4c-4614-adc4-b09781b7b3f8)",
+        "id": "match-service-gateway-unit-feature;get-matches-of-boxer-from-match-service-gateway-failure-(uid:efb9395f-4b75-4215-baca-a9bd3926ed48)",
         "keyword": "Scenario Outline",
         "line": 28,
-        "name": "Get matches of boxer from Match Service Gateway failure (uid:ef6a15ec-ed4c-4614-adc4-b09781b7b3f8)",
+        "name": "Get matches of boxer from Match Service Gateway failure (uid:efb9395f-4b75-4215-baca-a9bd3926ed48)",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
-              "status": "failed",
-              "duration": 5003000000,
-              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.time_1.default.setTimeout [as _onTimeout] (/home/arman/Desktop/standings/node_modules/@cucumber/cucumber/lib/user_code_runner.js:63:28)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)"
+              "status": "passed",
+              "duration": 127000000
             }
           },
           {
@@ -1123,8 +1114,8 @@
               "location": "features/step_definitions/step_definitions.js:32"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 1000000
             }
           },
           {
@@ -1136,7 +1127,7 @@
               "location": "features/step_definitions/step_definitions.js:52"
             },
             "result": {
-              "status": "skipped",
+              "status": "passed",
               "duration": 0
             }
           },
@@ -1149,8 +1140,8 @@
               "location": "features/step_definitions/step_definitions.js:56"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 1000000
             }
           },
           {
@@ -1162,8 +1153,8 @@
               "location": "features/step_definitions/step_definitions.js:64"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 1000000
             }
           },
           {
@@ -1177,15 +1168,15 @@
         ],
         "tags": [
           {
-            "name": "@Unit",
-            "line": 1
-          },
-          {
             "name": "@Gateway",
             "line": 1
           },
           {
             "name": "@MatchServiceGateway",
+            "line": 1
+          },
+          {
+            "name": "@Unit",
             "line": 1
           },
           {
@@ -1202,15 +1193,15 @@
     "name": "Match Service Gateway Unit Feature",
     "tags": [
       {
-        "name": "@Unit",
-        "line": 1
-      },
-      {
         "name": "@Gateway",
         "line": 1
       },
       {
         "name": "@MatchServiceGateway",
+        "line": 1
+      },
+      {
+        "name": "@Unit",
         "line": 1
       }
     ],

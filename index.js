@@ -58,7 +58,7 @@ function main() {
     SetupCleanUp: bindSetupCleanUp
   });
 
-  server.bind("0.0.0.0:" + (process.env.STANDINGS_SERVICE_SERVICE_PORT || "50004"), grpc.ServerCredentials.createInsecure());
+  server.bind("0.0.0.0:50054", grpc.ServerCredentials.createInsecure());
   server.start();
 }
 
