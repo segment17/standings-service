@@ -10,7 +10,7 @@ class MatchServiceGateway {
 
   readyClient() {
     if (this.client == undefined || this.client == null) {
-      this.client = new ubc_package.MatchService((process.env.MATCH_SERVICE_SERVICE_HOST || "0.0.0.0") + ":" + (process.env.MATCH_SERVICE_SERVICE_PORT || "50003"), grpc.credentials.createInsecure());
+      this.client = new ubc_package.MatchService((process.env.MATCH_SERVICE_ADDR || "0.0.0.0:50053"), grpc.credentials.createInsecure());
     }
   }
 

@@ -20,6 +20,11 @@ spec:
         image: segment17hub/standingsservice:0.1.1
         ports:
         - containerPort: 50054
+        env:
+          - name: MATCH_SERVICE_ADDR
+            value: "match-service:50053"
+          - name: STANDINGS_SERVICE_ADDR
+            value: "standings-service:50054"
 ---
 apiVersion: v1
 kind: Service

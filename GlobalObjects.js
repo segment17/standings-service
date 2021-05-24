@@ -20,7 +20,7 @@ class GlobalObjects {
     this.mediator = new Mediator();
     this.matchServiceGateway = new MatchServiceGateway();
 
-    this.client = new ubc_package.StandingsService("0.0.0.0:" + (process.env.STANDINGS_SERVICE_SERVICE_PORT || 50054), grpc.credentials.createInsecure());
+    this.client = new ubc_package.StandingsService(process.env.STANDINGS_SERVICE_ADDR || '0.0.0.0:50054', grpc.credentials.createInsecure());
   }
 
   // Mock everything...
@@ -47,12 +47,7 @@ class GlobalObjects {
     this.mediator = new Mediator();
     this.matchServiceGateway = new MatchServiceGateway();
 
-    // Connect to Kubernetes if possible
-    if (process.env.STANDINGS_SERVICE_SERVICE_PORT != undefined) {
-      this.client = new ubc_package.StandingsService("0.0.0.0" + ":" + process.env.STANDINGS_SERVICE_SERVICE_PORT, grpc.credentials.createInsecure());
-    } else {
-      this.client = new ubc_package.StandingsService("0.0.0.0:50054", grpc.credentials.createInsecure());
-    }
+    this.client = new ubc_package.StandingsService(process.env.STANDINGS_SERVICE_ADDR || '0.0.0.0:50054', grpc.credentials.createInsecure());
   }
 
   async cleanUp() {
