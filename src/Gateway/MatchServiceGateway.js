@@ -5,7 +5,9 @@ const PROTO_PATH = __dirname + '../../../proto/ubc.proto';
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, { keepCase: true, longs: String, enums: String, defaults: true, oneofs: true });
 const ubc_package = grpc.loadPackageDefinition(packageDefinition).ubc_package;
 // GRPC SETUP
-
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 class MatchServiceGateway {
 
   readyClient() {
@@ -26,7 +28,11 @@ class MatchServiceGateway {
 
   async doCallForGetMatchesOfBoxer(param) {
     this.readyClient();
+    await sleep(300);
+    console.log('🔵MatchService.GetMatchesOfBoxer🔵\t:: ', param);
     let response = await this.PROMISE_doCallForGetMatchesOfBoxer(param);
+    await sleep(300);
+    console.log('🟣MatchService.GetMatchesOfBoxer🟣\t:: ', JSON.stringify(response));
     return response;
   }
 
@@ -40,7 +46,11 @@ class MatchServiceGateway {
 
   async doCallForGetAllMatches(param) {
     this.readyClient();
+    await sleep(300);
+    console.log('🔵MatchService.GetAllMatches🔵\t:: ', param);
     let response = await this.PROMISE_doCallForGetAllMatches();
+    await sleep(300);
+    console.log('🟣MatchService.GetAllMatches🟣\t:: ', JSON.stringify(response));
     return response;
   }
 

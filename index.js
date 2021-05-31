@@ -10,13 +10,25 @@ const packageDefinition = protoLoader.loadSync(PROTO_PATH, { keepCase: true, lon
 const ubc_package = grpc.loadPackageDefinition(packageDefinition).ubc_package;
 // GRPC SETUP
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 async function bindGetStandingAndMatchesOfBoxer(call, callback) {
+  await sleep(300);
+  console.log('\n⚪GetStandingAndMatchesOfBoxer⚪\t:: ', JSON.stringify(call.request));
   let r = await globalObjects.controller.guardGetStandingAndMatchesOfBoxer(call.request);
+  await sleep(300);
+  console.log('🟢GetStandingAndMatchesOfBoxer🟢\t:: ', JSON.stringify(r));
   callback(null, r);
 }
 
 async function bindGetAllStandings(call, callback) {
+  await sleep(300);
+  console.log('\n⚪GetAllStandings⚪\t:: ', JSON.stringify(call.request));
   let r = await globalObjects.controller.guardGetAllStandings();
+  await sleep(300);
+  console.log('🟢GetAllStandings🟢\t:: ', JSON.stringify(r));
   callback(null, r);
 }
 
