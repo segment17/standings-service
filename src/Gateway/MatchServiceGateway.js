@@ -28,10 +28,10 @@ class MatchServiceGateway {
 
   async doCallForGetMatchesOfBoxer(param) {
     this.readyClient();
-    await sleep(300);
+    await sleep(50);
     console.log('🔵MatchService.GetMatchesOfBoxer🔵\t:: ', param);
     let response = await this.PROMISE_doCallForGetMatchesOfBoxer(param);
-    await sleep(300);
+    await sleep(50);
     console.log('🟣MatchService.GetMatchesOfBoxer🟣\t:: ', JSON.stringify(response));
     return response;
   }
@@ -46,10 +46,10 @@ class MatchServiceGateway {
 
   async doCallForGetAllMatches(param) {
     this.readyClient();
-    await sleep(300);
+    await sleep(50);
     console.log('🔵MatchService.GetAllMatches🔵\t:: ', param);
     let response = await this.PROMISE_doCallForGetAllMatches();
-    await sleep(300);
+    await sleep(50);
     console.log('🟣MatchService.GetAllMatches🟣\t:: ', JSON.stringify(response));
     return response;
   }

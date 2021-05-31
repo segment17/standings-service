@@ -4,17 +4,329 @@
     "elements": [
       {
         "description": "",
-        "id": "standings-service-e2e-features;get-all-standings-(1)-(uid:d4669ab9-53d9-4522-a84d-e85648a6524b)",
+        "id": "match-service-gateway-unit-feature;get-all-matches-from-match-service-gateway-(1)-(uid:7b00598e-185f-41a4-b7f1-5476f1d2547d)",
         "keyword": "Scenario Outline",
         "line": 6,
-        "name": "Get all standings (1) (uid:d4669ab9-53d9-4522-a84d-e85648a6524b)",
+        "name": "Get all matches from Match Service Gateway (1) (uid:7b00598e-185f-41a4-b7f1-5476f1d2547d)",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 45000000
+              "duration": 50000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "there are boxers such as \"Unit_MatchServiceGateway_Scenario1.boxers\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "there are matches such as \"Unit_MatchServiceGateway_Scenario1.matches\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "\"getAllMatches\" is invoked",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:60"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "returned data is as \"Unit_MatchServiceGateway_Scenario1.expected_data\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:64"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 309000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Integration",
+            "line": 1
+          },
+          {
+            "name": "@Gateway",
+            "line": 1
+          },
+          {
+            "name": "@MatchServiceGateway",
+            "line": 1
+          },
+          {
+            "name": "@Unit_MatchServiceGateway_Scenario1",
+            "line": 5
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "match-service-gateway-unit-feature;get-matches-of-boxer-from-match-service-gateway-(1)-(uid:eeb30bc8-57f1-420e-93ee-378f2ed4e949)",
+        "keyword": "Scenario Outline",
+        "line": 17,
+        "name": "Get matches of boxer from Match Service Gateway (1) (uid:eeb30bc8-57f1-420e-93ee-378f2ed4e949)",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 40000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "there are boxers such as \"Unit_MatchServiceGateway_Scenario2.boxers\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "there are matches such as \"Unit_MatchServiceGateway_Scenario2.matches\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "\"getMatchesOfBoxer\" is invoked with \"Unit_MatchServiceGateway_Scenario2.boxer_id\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:56"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "returned data is as \"Unit_MatchServiceGateway_Scenario2.expected_data\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:64"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 518000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Integration",
+            "line": 1
+          },
+          {
+            "name": "@Gateway",
+            "line": 1
+          },
+          {
+            "name": "@MatchServiceGateway",
+            "line": 1
+          },
+          {
+            "name": "@Unit_MatchServiceGateway_Scenario2",
+            "line": 16
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "match-service-gateway-unit-feature;get-matches-of-boxer-from-match-service-gateway-failure-(1)-(uid:8920c9e9-0a79-481a-b8a9-d873f4ec779a)",
+        "keyword": "Scenario Outline",
+        "line": 28,
+        "name": "Get matches of boxer from Match Service Gateway failure (1) (uid:8920c9e9-0a79-481a-b8a9-d873f4ec779a)",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 39000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 29,
+            "name": "there are boxers such as \"Unit_MatchServiceGateway_Scenario3_Fail1.boxers\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "there are matches such as \"Unit_MatchServiceGateway_Scenario3_Fail1.matches\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 31,
+            "name": "\"getMatchesOfBoxer\" is invoked with \"Unit_MatchServiceGateway_Scenario3_Fail1.boxer_id\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:56"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "returned data is as \"Unit_MatchServiceGateway_Scenario3_Fail1.expected_data\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:64"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 514000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 3000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Integration",
+            "line": 1
+          },
+          {
+            "name": "@Gateway",
+            "line": 1
+          },
+          {
+            "name": "@MatchServiceGateway",
+            "line": 1
+          },
+          {
+            "name": "@Unit_MatchServiceGateway_Scenario3",
+            "line": 27
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "match-service-gateway-unit-feature",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Match Service Gateway Unit Feature",
+    "tags": [
+      {
+        "name": "@Integration",
+        "line": 1
+      },
+      {
+        "name": "@Gateway",
+        "line": 1
+      },
+      {
+        "name": "@MatchServiceGateway",
+        "line": 1
+      }
+    ],
+    "uri": "features/cucumberstudio/Integration/Match_Service_Gateway_Unit_Feature.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "standings-service-component-features;get-all-standings-(uid:e188ba6c-d9fc-4d75-ba8f-82b700975d5a)",
+        "keyword": "Scenario Outline",
+        "line": 6,
+        "name": "Get all standings (uid:e188ba6c-d9fc-4d75-ba8f-82b700975d5a)",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 144000000
             }
           },
           {
@@ -27,7 +339,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 107000000
+              "duration": 109000000
             }
           },
           {
@@ -40,7 +352,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 6000000
+              "duration": 2000000
             }
           },
           {
@@ -66,7 +378,299 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1879000000
+              "duration": 207000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Component",
+            "line": 1
+          },
+          {
+            "name": "@H2",
+            "line": 5
+          },
+          {
+            "name": "@H2_Scenario1",
+            "line": 5
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "standings-service-component-features;get-standing-and-matches-of-a-boxer-(uid:b5d3db3d-7ddd-4370-91a8-4dc61c6a46f4)",
+        "keyword": "Scenario Outline",
+        "line": 17,
+        "name": "Get standing and matches of a boxer (uid:b5d3db3d-7ddd-4370-91a8-4dc61c6a46f4)",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 144000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "there is a boxer such as \"B1_Scenario1_Variation1.boxer\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 104000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "there are matches such as \"B1_Scenario1_Variation1.matches\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "\"GetStandingAndMatchesOfBoxer\" is called with \"B1_Scenario1_Variation1.request_body\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "response is as \"B1_Scenario1_Variation1.expected_response\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 205000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Component",
+            "line": 1
+          },
+          {
+            "name": "@B1",
+            "line": 16
+          },
+          {
+            "name": "@B1_Scenario1",
+            "line": 16
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "standings-service-component-features;get-standing-and-matches-of-a-boxer-failure-(uid:876d5067-c56c-467b-a15e-bd7611c0bc28)",
+        "keyword": "Scenario Outline",
+        "line": 28,
+        "name": "Get standing and matches of a boxer failure (uid:876d5067-c56c-467b-a15e-bd7611c0bc28)",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 145000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 29,
+            "name": "there is a boxer such as \"B1_Scenario2_Fail1.boxer\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 107000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "there are matches such as \"B1_Scenario2_Fail1.matches\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 31,
+            "name": "\"GetStandingAndMatchesOfBoxer\" is called with \"B1_Scenario2_Fail1.request_body\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "response is as \"B1_Scenario2_Fail1.expected_response\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 209000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Component",
+            "line": 1
+          },
+          {
+            "name": "@B1",
+            "line": 27
+          },
+          {
+            "name": "@B1_Scenario2",
+            "line": 27
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "standings-service-component-features",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Standings Service Component Features",
+    "tags": [
+      {
+        "name": "@Component",
+        "line": 1
+      }
+    ],
+    "uri": "features/cucumberstudio/Standings_Service_Component_Features.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "standings-service-e2e-features;get-all-standings-(1)-(uid:d4669ab9-53d9-4522-a84d-e85648a6524b)",
+        "keyword": "Scenario Outline",
+        "line": 6,
+        "name": "Get all standings (1) (uid:d4669ab9-53d9-4522-a84d-e85648a6524b)",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 36000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "there are boxers such as \"H2_Scenario1_Variation1.boxers\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 101000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "there are matches such as \"H2_Scenario1_Variation1.matches\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "\"GetAllStandings\" is called",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "response is as \"H2_Scenario1_Variation1.expected_response\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 409000000
             }
           },
           {
@@ -106,7 +710,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 43000000
+              "duration": 38000000
             }
           },
           {
@@ -145,7 +749,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2000000
+              "duration": 0
             }
           },
           {
@@ -158,7 +762,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3099000000
+              "duration": 620000000
             }
           },
           {
@@ -198,7 +802,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 41000000
+              "duration": 39000000
             }
           },
           {
@@ -211,7 +815,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 102000000
+              "duration": 103000000
             }
           },
           {
@@ -237,7 +841,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 0
             }
           },
           {
@@ -250,7 +854,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3101000000
+              "duration": 614000000
             }
           },
           {
@@ -290,5 +894,317 @@
       }
     ],
     "uri": "features/cucumberstudio/Standings_Service_E2E_Features.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "match-service-gateway-unit-feature;get-all-matches-from-match-service-gateway-(uid:7fdf2dab-907b-467d-9539-833174f9dd67)",
+        "keyword": "Scenario Outline",
+        "line": 6,
+        "name": "Get all matches from Match Service Gateway (uid:7fdf2dab-907b-467d-9539-833174f9dd67)",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 147000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "there are boxers such as \"Unit_MatchServiceGateway_Scenario1.boxers\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "there are matches such as \"Unit_MatchServiceGateway_Scenario1.matches\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "\"getAllMatches\" is invoked",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:60"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "returned data is as \"Unit_MatchServiceGateway_Scenario1.expected_data\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:64"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Gateway",
+            "line": 1
+          },
+          {
+            "name": "@MatchServiceGateway",
+            "line": 1
+          },
+          {
+            "name": "@Unit",
+            "line": 1
+          },
+          {
+            "name": "@Unit_MatchServiceGateway_Scenario1",
+            "line": 5
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "match-service-gateway-unit-feature;get-matches-of-boxer-from-match-service-gateway-(uid:8f5af6d9-554f-4535-a44b-4be7e801d71d)",
+        "keyword": "Scenario Outline",
+        "line": 17,
+        "name": "Get matches of boxer from Match Service Gateway (uid:8f5af6d9-554f-4535-a44b-4be7e801d71d)",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 143000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "there are boxers such as \"Unit_MatchServiceGateway_Scenario2.boxers\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "there are matches such as \"Unit_MatchServiceGateway_Scenario2.matches\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "\"getMatchesOfBoxer\" is invoked with \"Unit_MatchServiceGateway_Scenario2.boxer_id\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:56"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "returned data is as \"Unit_MatchServiceGateway_Scenario2.expected_data\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:64"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Gateway",
+            "line": 1
+          },
+          {
+            "name": "@MatchServiceGateway",
+            "line": 1
+          },
+          {
+            "name": "@Unit",
+            "line": 1
+          },
+          {
+            "name": "@Unit_MatchServiceGateway_Scenario2",
+            "line": 16
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "match-service-gateway-unit-feature;get-matches-of-boxer-from-match-service-gateway-failure-(uid:efb9395f-4b75-4215-baca-a9bd3926ed48)",
+        "keyword": "Scenario Outline",
+        "line": 28,
+        "name": "Get matches of boxer from Match Service Gateway failure (uid:efb9395f-4b75-4215-baca-a9bd3926ed48)",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 143000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 29,
+            "name": "there are boxers such as \"Unit_MatchServiceGateway_Scenario3_Fail1.boxers\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "there are matches such as \"Unit_MatchServiceGateway_Scenario3_Fail1.matches\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 31,
+            "name": "\"getMatchesOfBoxer\" is invoked with \"Unit_MatchServiceGateway_Scenario3_Fail1.boxer_id\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:56"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "returned data is as \"Unit_MatchServiceGateway_Scenario3_Fail1.expected_data\"",
+            "match": {
+              "location": "features/step_definitions/step_definitions.js:64"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Gateway",
+            "line": 1
+          },
+          {
+            "name": "@MatchServiceGateway",
+            "line": 1
+          },
+          {
+            "name": "@Unit",
+            "line": 1
+          },
+          {
+            "name": "@Unit_MatchServiceGateway_Scenario3",
+            "line": 27
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "match-service-gateway-unit-feature",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Match Service Gateway Unit Feature",
+    "tags": [
+      {
+        "name": "@Gateway",
+        "line": 1
+      },
+      {
+        "name": "@MatchServiceGateway",
+        "line": 1
+      },
+      {
+        "name": "@Unit",
+        "line": 1
+      }
+    ],
+    "uri": "features/cucumberstudio/Unit/Match_Service_Gateway_Unit_Feature.feature"
   }
 ]
