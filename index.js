@@ -16,19 +16,19 @@ function sleep(ms) {
 
 async function bindGetStandingAndMatchesOfBoxer(call, callback) {
   await sleep(50);
-  console.log('\n⚪GetStandingAndMatchesOfBoxer⚪\t:: ', JSON.stringify(call.request));
+  console.log('\n⚪  GetStandingAndMatchesOfBoxer:: ', JSON.stringify(call.request));
   let r = await globalObjects.controller.guardGetStandingAndMatchesOfBoxer(call.request);
   await sleep(50);
-  console.log('🟢GetStandingAndMatchesOfBoxer🟢\t:: ', JSON.stringify(r));
+  console.log('🟢  GetStandingAndMatchesOfBoxer:: ', JSON.stringify(r));
   callback(null, r);
 }
 
 async function bindGetAllStandings(call, callback) {
   await sleep(50);
-  console.log('\n⚪GetAllStandings⚪\t:: ', JSON.stringify(call.request));
+  console.log('\n⚪  GetAllStandings:: ', JSON.stringify(call.request));
   let r = await globalObjects.controller.guardGetAllStandings();
   await sleep(50);
-  console.log('🟢GetAllStandings🟢\t:: ', JSON.stringify(r));
+  console.log('🟢  GetAllStandings:: ', JSON.stringify(r));
   callback(null, r);
 }
 
