@@ -17,7 +17,7 @@ spec:
       containers:
       - name: standings-service
         imagePullPolicy: IfNotPresent
-        image: segment17hub/standingsservice:0.1.2
+        image: segment17hub/standingsservice:0.1.3
         ports:
         - containerPort: 50054
         env:
