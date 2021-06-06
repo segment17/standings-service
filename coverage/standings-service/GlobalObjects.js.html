@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.55% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>29/31</span>
+                <span class='fraction'>27/27</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.55% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>29/31</span>
+                <span class='fraction'>27/27</span>
             </div>
         
             
@@ -116,17 +116,7 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -148,12 +138,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -163,33 +148,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -203,9 +183,9 @@ const MockMatchServiceGateway = require('./src/Gateway/Mock/MockMatchServiceGate
 // GRPC SETUP
 const grpc = require('grpc');
 const protoLoader = require('@grpc/proto-loader');
-const PROTO_PATH = __dirname + '/proto/standingsservice.proto';
+const PROTO_PATH = __dirname + '/proto/ubc.proto';
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, { keepCase: true, longs: String, enums: String, defaults: true, oneofs: true });
-const standingsservice_package = grpc.loadPackageDefinition(packageDefinition).standingsservice_package;
+const ubc_package = grpc.loadPackageDefinition(packageDefinition).ubc_package;
 // GRPC SETUP
 &nbsp;
 class GlobalObjects {
@@ -217,12 +197,7 @@ class GlobalObjects {
     this.mediator = new Mediator();
     this.matchServiceGateway = new MatchServiceGateway();
 &nbsp;
-    // Connect to Kubernetes if possible
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (process.env.STANDINGS_SERVICE_SERVICE_PORT != undefined) {
-<span class="cstat-no" title="statement not covered" >      this.client = new standingsservice_package.StandingsService("0.0.0.0" + ":" + process.env.STANDINGS_SERVICE_SERVICE_PORT, grpc.credentials.createInsecure());</span>
-    } else {
-      this.client = new standingsservice_package.StandingsService("0.0.0.0:50054", grpc.credentials.createInsecure());
-    }
+    this.client = new ubc_package.StandingsService(process.env.STANDINGS_SERVICE_ADDR || '0.0.0.0:50054', grpc.credentials.createInsecure());
   }
 &nbsp;
   // Mock everything...
@@ -249,12 +224,7 @@ class GlobalObjects {
     this.mediator = new Mediator();
     this.matchServiceGateway = new MatchServiceGateway();
 &nbsp;
-    // Connect to Kubernetes if possible
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (process.env.STANDINGS_SERVICE_SERVICE_PORT != undefined) {
-<span class="cstat-no" title="statement not covered" >      this.client = new standingsservice_package.StandingsService("0.0.0.0" + ":" + process.env.STANDINGS_SERVICE_SERVICE_PORT, grpc.credentials.createInsecure());</span>
-    } else {
-      this.client = new standingsservice_package.StandingsService("0.0.0.0:50054", grpc.credentials.createInsecure());
-    }
+    this.client = new ubc_package.StandingsService(process.env.STANDINGS_SERVICE_ADDR || '0.0.0.0:50054', grpc.credentials.createInsecure());
   }
 &nbsp;
   async cleanUp() {
@@ -271,7 +241,7 @@ module.exports = GlobalObjects;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue May 18 2021 23:09:16 GMT+0300 (GMT+03:00)
+                at Sun Jun 06 2021 23:29:17 GMT+0300 (GMT+03:00)
             </div>
         </div>
         <script src="../prettify.js"></script>
