@@ -3,7 +3,7 @@ Feature: Match Service Gateway Integration Feature
 
   #SUCCESS SCENARIOS
 
-  @Unit_MatchServiceGateway_Scenario1
+  @Unit_MatchServiceGateway_Scenario1 @H2
   Scenario Outline: Get all matches from Match Service Gateway
     Given there are boxers such as "<boxers>"
     And there are matches such as "<matches>"
@@ -15,7 +15,7 @@ Feature: Match Service Gateway Integration Feature
       | Unit_MatchServiceGateway_Scenario1.boxers | Unit_MatchServiceGateway_Scenario1.matches | getAllMatches    | Unit_MatchServiceGateway_Scenario1.expected_data |
 
 
-  @Unit_MatchServiceGateway_Scenario2
+  @Unit_MatchServiceGateway_Scenario2 @B1
   Scenario Outline: Get matches of boxer from Match Service Gateway
     Given there are boxers such as "<boxers>"
     And there are matches such as "<matches>"
@@ -28,7 +28,7 @@ Feature: Match Service Gateway Integration Feature
 
   #FAIL SCENARIOS
 
-  @Unit_MatchServiceGateway_Scenario3
+  @Unit_MatchServiceGateway_Scenario3 @B1
   Scenario Outline: Get matches of boxer from Match Service Gateway failure
     Given there are boxers such as "<boxers>"
     And there are matches such as "<matches>"
